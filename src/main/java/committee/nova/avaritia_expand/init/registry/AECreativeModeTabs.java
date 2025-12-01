@@ -16,7 +16,7 @@ public class AECreativeModeTabs {
             .title(Component.translatable("itemGroup.tab.avaritia_expand"))
             .icon(Items.NETHERITE_INGOT::getDefaultInstance)
             .displayItems((parameters, output) -> {
-                output.accept(AEItems.test.get());
+                output.accept(AEItems.neutron_sword.get());
             })
             .build());
     public static void register(IEventBus bus){
