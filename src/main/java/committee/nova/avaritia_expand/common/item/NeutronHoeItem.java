@@ -1,5 +1,6 @@
 package committee.nova.avaritia_expand.common.item;
 
+import committee.nova.mods.avaritia.api.iface.transform.IToolTransform;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.InteractionResult;
@@ -16,7 +17,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
 
-public class NeutronHoeItem extends HoeItem {
+public class NeutronHoeItem extends HoeItem implements IToolTransform {
     private static final Map<UUID, Long> cooldowns = new HashMap<>();
     private static final long COOLDOWN_TIME = 1500;
 

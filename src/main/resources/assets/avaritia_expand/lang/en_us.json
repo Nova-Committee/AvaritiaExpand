@@ -1,3 +1,10 @@
 {
-
+  "itemGroup.tab.avaritia_expand": "Avaritia:Expand",
+  "item.avaritia_expand.neutron_sword": "Neutronium Sword",
+  "item.avaritia_expand.neutron_axe": "Neutronium Axe",
+  "item.avaritia_expand.neutron_pickaxe": "Neutronium Pickaxe",
+  "item.avaritia_expand.neutron_shovel": "Neutronium Shovel",
+  "item.avaritia_expand.neutron_hoe": "Neutronium Hoe",
+  "item.avaritia_expand.star": "Miniature Star",
+  "item.avaritia_expand.star_dessert": "Star Dessert"
 }

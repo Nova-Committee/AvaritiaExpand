@@ -1,3 +1,10 @@
 {
-
+  "itemGroup.tab.avaritia_expand": "无尽:拓展",
+  "item.avaritia_expand.neutron_sword": "中子剑",
+  "item.avaritia_expand.neutron_axe": "中子斧",
+  "item.avaritia_expand.neutron_pickaxe": "中子镐",
+  "item.avaritia_expand.neutron_shovel": "中子铲",
+  "item.avaritia_expand.neutron_hoe": "中子锄",
+  "item.avaritia_expand.star": "微缩恒星",
+  "item.avaritia_expand.star_dessert": "恒星甜点"
 }
