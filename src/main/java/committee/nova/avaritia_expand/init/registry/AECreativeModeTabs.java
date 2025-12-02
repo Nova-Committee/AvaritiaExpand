@@ -17,6 +17,12 @@ public class AECreativeModeTabs {
             .icon(Items.NETHERITE_INGOT::getDefaultInstance)
             .displayItems((parameters, output) -> {
                 output.accept(AEItems.neutron_sword.get());
+                output.accept(AEItems.neutron_axe.get());
+                output.accept(AEItems.neutron_pickaxe.get());
+                output.accept(AEItems.neutron_shovel.get());
+                output.accept(AEItems.neutron_hoe.get());
+                output.accept(AEItems.star.get());
+                output.accept(AEItems.star_dessert.get());
             })
             .build());
     public static void register(IEventBus bus){

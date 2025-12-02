@@ -1,0 +1,14 @@
+{
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "halo": "avaritia:misc/halo_noise",
+    "layer0": "avaritia_expand:item/tools/neutron_shovel/layer_0"
+  },
+  "loader": "avaritia:halo",
+  "halo": {
+    "texture": "#halo",
+    "color": -1711276033,
+    "size": 6,
+    "pulse": false
+  }
+}
