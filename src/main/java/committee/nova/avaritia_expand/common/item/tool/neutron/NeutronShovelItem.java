@@ -1,4 +1,4 @@
-package committee.nova.avaritia_expand.common.item;
+package committee.nova.avaritia_expand.common.item.tool.neutron;
 
 import committee.nova.mods.avaritia.api.common.enchant.InitEnchantment;
 import committee.nova.mods.avaritia.api.iface.item.InitEnchantItem;

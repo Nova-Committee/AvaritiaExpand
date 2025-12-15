@@ -1,7 +1,7 @@
 package committee.nova.avaritia_expand.init.handler;
 
 import committee.nova.avaritia_expand.AvaritiaExpand;
-import committee.nova.avaritia_expand.common.item.NeutronSwordItem;
+import committee.nova.avaritia_expand.common.item.tool.neutron.NeutronSwordItem;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
@@ -12,9 +12,8 @@ import net.neoforged.neoforge.event.entity.living.LivingDamageEvent;
 
 import java.util.Random;
 
-@EventBusSubscriber(
-        modid = AvaritiaExpand.MOD_ID
-)
+@EventBusSubscriber(modid = AvaritiaExpand.MOD_ID)
+
 public class ExpandHandler {
     @SubscribeEvent
     public static void onPlayerHurt(LivingDamageEvent.Post event) {

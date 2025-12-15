@@ -1,4 +1,4 @@
-package committee.nova.avaritia_expand.common.item;
+package committee.nova.avaritia_expand.common.item.tool.neutron;
 
 import committee.nova.mods.avaritia.api.iface.transform.IToolTransform;
 import net.minecraft.core.BlockPos;

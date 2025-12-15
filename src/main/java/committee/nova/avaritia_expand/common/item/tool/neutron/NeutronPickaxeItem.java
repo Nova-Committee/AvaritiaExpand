@@ -1,11 +1,10 @@
-package committee.nova.avaritia_expand.common.item;
+package committee.nova.avaritia_expand.common.item.tool.neutron;
 
 import committee.nova.avaritia_expand.util.AEToolUtils;
 import committee.nova.mods.avaritia.api.common.enchant.InitEnchantment;
 import committee.nova.mods.avaritia.api.iface.item.ISwitchable;
 import committee.nova.mods.avaritia.api.iface.item.InitEnchantItem;
 import committee.nova.mods.avaritia.api.iface.transform.IToolTransform;
-import committee.nova.mods.avaritia.init.config.ModConfig;
 import committee.nova.mods.avaritia.util.ToolUtils;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Holder;
