@@ -1,0 +1,8 @@
+# Made in Blockbench 5.0.6
+newmtl 1
+map_Kd crystal_matrix_armor/helmet
+newmtl 2
+map_Kd crystal_matrix_armor/chestplate
+newmtl 3
+map_Kd crystal_matrix_armor/leggings
+newmtl none

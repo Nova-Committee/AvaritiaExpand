@@ -7,7 +7,6 @@ import committee.nova.avaritia_expand.common.item.armor.crystal.CrystalChestplat
 import committee.nova.avaritia_expand.common.item.armor.crystal.CrystalHelmetItem;
 import committee.nova.avaritia_expand.common.item.armor.crystal.CrystalLeggingsItem;
 import committee.nova.avaritia_expand.common.item.tool.neutron.*;
-import committee.nova.avaritia_expand.init.registry.enums.AEToolTiers;
 import committee.nova.mods.avaritia.init.registry.ModRarities;
 import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.Item;
