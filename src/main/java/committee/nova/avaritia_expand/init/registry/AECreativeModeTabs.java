@@ -24,6 +24,7 @@ public class AECreativeModeTabs {
                 output.accept(AEItems.star.get());
                 output.accept(AEItems.star_dessert.get());
                 output.accept(AEItems.singularity_stew.get());
+                output.accept(AEItems.infinity_bottle.get());
                 output.accept(AEItems.blaze_helmet.get());
                 output.accept(AEItems.blaze_chestplate.get());
                 output.accept(AEItems.blaze_leggings.get());
@@ -32,6 +33,7 @@ public class AECreativeModeTabs {
                 output.accept(AEItems.crystal_chestplate.get());
                 output.accept(AEItems.crystal_leggings.get());
                 output.accept(AEItems.crystal_boots.get());
+                output.accept(AEBlocks.infinity_tnt_block.get());
             })
             .build());
     public static void register(IEventBus bus){

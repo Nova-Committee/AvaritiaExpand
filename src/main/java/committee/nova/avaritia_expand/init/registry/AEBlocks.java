@@ -1,6 +1,10 @@
 package committee.nova.avaritia_expand.init.registry;
 
 import committee.nova.avaritia_expand.AvaritiaExpand;
+import committee.nova.avaritia_expand.common.block.InfinityTntBlock;
+import committee.nova.mods.avaritia.common.block.craft.TierCraftTableBlock;
+import committee.nova.mods.avaritia.init.registry.ModRarities;
+import committee.nova.mods.avaritia.init.registry.enums.ModCraftTier;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
@@ -13,6 +17,10 @@ import java.util.function.Supplier;
 
 public class AEBlocks {
     public static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(AvaritiaExpand.MOD_ID);
+
+
+    public static DeferredBlock<Block> infinity_tnt_block = itemBlock("infinity_tnt_block", () -> new InfinityTntBlock(BlockBehaviour.Properties.of()));
+
 
 
     private static <T extends Block> DeferredBlock<T> itemBlock(String name, Supplier<T> block){

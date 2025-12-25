@@ -86,6 +86,7 @@ repositories {
 dependencies {
     implementation "curse.maven:re-avaritia-623969:7281327"
     implementation "curse.maven:curios-309927:6529130"
+    implementation "curse.maven:jade-324717:6853386"
     implementation "curse.maven:jei-238222:7270455"
 }
 

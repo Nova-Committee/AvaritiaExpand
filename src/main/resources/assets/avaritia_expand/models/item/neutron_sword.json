@@ -1,12 +1,14 @@
 {
   "parent": "minecraft:item/handheld",
   "textures": {
+    "halo": "avaritia:misc/halo_noise",
     "layer0": "avaritia_expand:item/tools/neutron_sword/layer_0"
   },
-  "loader": "avaritia_expand:glow_edge",
-  "glow_edge": {
-    "color": 16711680,
-    "width": 1.0,
-    "offset": -0.02
+  "loader": "avaritia:halo",
+  "halo": {
+    "texture": "#halo",
+    "color": -1711276033,
+    "size": 6,
+    "pulse": false
   }
 }
