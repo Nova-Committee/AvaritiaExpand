@@ -8,20 +8,21 @@ import net.minecraft.client.renderer.RenderType;
 
 import static net.minecraft.client.renderer.RenderStateShard.*;
 
+
 public class AERenderTypes {
 
-    public static final RenderType GLOWING_OUTLINE = RenderType.create(
-            AvaritiaExpand.rl("glowing_outline").toString(),
+    public static RenderType GLOW_SHADER_TYPE = RenderType.create(
+            AvaritiaExpand.rl("glow").toString(),
             DefaultVertexFormat.NEW_ENTITY,
-            VertexFormat.Mode.QUADS,
-            256,
+            VertexFormat.Mode.QUADS, 256, true, true,
             RenderType.CompositeState.builder()
-                    .setShaderState(RENDERTYPE_OUTLINE_SHADER)
-                    .setTextureState(RenderStateShard.BLOCK_SHEET_MIPPED)
-                    .setTransparencyState(TRANSLUCENT_TRANSPARENCY)
-                    .setCullState(RenderStateShard.NO_CULL)
+                    .setShaderState(new RenderStateShard.ShaderStateShard(() -> AEShaders.GLOW_SHADER))
+                    .setTextureState(BLOCK_SHEET_MIPPED)
+                    .setTransparencyState(RenderStateShard.LIGHTNING_TRANSPARENCY)
+                    .setCullState(NO_CULL)
                     .setLightmapState(LIGHTMAP)
-                    .setWriteMaskState(RenderStateShard.COLOR_WRITE)
-                    .createCompositeState(false));
+                    .setWriteMaskState(COLOR_WRITE)
+                    .createCompositeState(true)
+    );
 
 }

@@ -7,11 +7,16 @@ import committee.nova.avaritia_expand.common.item.armor.crystal.CrystalChestplat
 import committee.nova.avaritia_expand.common.item.armor.crystal.CrystalHelmetItem;
 import committee.nova.avaritia_expand.common.item.armor.crystal.CrystalLeggingsItem;
 import committee.nova.avaritia_expand.common.item.misc.InfinityBottleItem;
+import committee.nova.avaritia_expand.common.item.tool.infinity.InfinityShearsItem;
 import committee.nova.avaritia_expand.common.item.tool.neutron.*;
+import committee.nova.mods.avaritia.init.registry.ModDataComponents;
 import committee.nova.mods.avaritia.init.registry.ModRarities;
+import committee.nova.mods.avaritia.init.registry.ModToolTiers;
+import committee.nova.mods.avaritia.init.registry.modes.ToolMode;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Tiers;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
@@ -23,20 +28,20 @@ public class AEItems {
     public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(    AvaritiaExpand.MOD_ID);
 
         public static DeferredItem<Item> neutron_sword = ITEMS.register("neutron_sword",
-                ()-> new NeutronSwordItem(AEToolTiers.NEUTRON,new Item.Properties()
-                        .fireResistant().rarity(ModRarities.EPIC).stacksTo(1).attributes(createAttributes(AEToolTiers.NEUTRON, 0, AEToolTiers.NEUTRON.getSpeed())).durability(8888)));
+                ()-> new NeutronSwordItem(ModToolTiers.CRYSTAL,new Item.Properties()
+                        .fireResistant().rarity(ModRarities.EPIC).stacksTo(1).attributes(createAttributes(ModToolTiers.CRYSTAL, 0, -2)).component(ModDataComponents.TOOL_MODE, ToolMode.DEFAULT)));
         public static DeferredItem<Item> neutron_axe = ITEMS.register("neutron_axe",
-            ()-> new NeutronAxeItem(AEToolTiers.NEUTRON,new Item.Properties()
-                    .fireResistant().rarity(ModRarities.EPIC).stacksTo(1).attributes(createAttributes(AEToolTiers.NEUTRON, 0, AEToolTiers.NEUTRON.getSpeed())).durability(8888)));
+            ()-> new NeutronAxeItem(ModToolTiers.CRYSTAL,new Item.Properties()
+                    .fireResistant().rarity(ModRarities.EPIC).stacksTo(1).attributes(createAttributes(ModToolTiers.CRYSTAL, 0, -3)).component(ModDataComponents.TOOL_MODE, ToolMode.DEFAULT)));
         public static DeferredItem<Item> neutron_pickaxe = ITEMS.register("neutron_pickaxe",
-            ()-> new NeutronPickaxeItem(AEToolTiers.NEUTRON,new Item.Properties()
-                    .fireResistant().rarity(ModRarities.EPIC).stacksTo(1).attributes(createAttributes(AEToolTiers.NEUTRON, 0, AEToolTiers.NEUTRON.getSpeed())).durability(8888)));
+            ()-> new NeutronPickaxeItem(ModToolTiers.CRYSTAL,new Item.Properties()
+                    .fireResistant().rarity(ModRarities.EPIC).stacksTo(1).attributes(createAttributes(ModToolTiers.CRYSTAL, 0, -3)).component(ModDataComponents.TOOL_MODE, ToolMode.DEFAULT)));
         public static DeferredItem<Item> neutron_shovel = ITEMS.register("neutron_shovel",
-            ()-> new NeutronShovelItem(AEToolTiers.NEUTRON,new Item.Properties()
-                    .fireResistant().rarity(ModRarities.EPIC).stacksTo(1).attributes(createAttributes(AEToolTiers.NEUTRON, 0, AEToolTiers.NEUTRON.getSpeed())).durability(8888)));
+            ()-> new NeutronShovelItem(ModToolTiers.CRYSTAL,new Item.Properties()
+                    .fireResistant().rarity(ModRarities.EPIC).stacksTo(1).attributes(createAttributes(ModToolTiers.CRYSTAL, 0, -3)).component(ModDataComponents.TOOL_MODE, ToolMode.DEFAULT)));
         public static DeferredItem<Item> neutron_hoe = ITEMS.register("neutron_hoe",
-            ()-> new NeutronHoeItem(AEToolTiers.NEUTRON,new Item.Properties()
-                    .fireResistant().rarity(ModRarities.EPIC).stacksTo(1).attributes(createAttributes(AEToolTiers.NEUTRON, 0, AEToolTiers.NEUTRON.getSpeed())).durability(8888)));
+            ()-> new NeutronHoeItem(ModToolTiers.CRYSTAL,new Item.Properties()
+                    .fireResistant().rarity(ModRarities.EPIC).stacksTo(1).attributes(createAttributes(ModToolTiers.CRYSTAL, 0, -3)).component(ModDataComponents.TOOL_MODE, ToolMode.DEFAULT)));
 
         public static  DeferredItem<ArmorItem> blaze_helmet = ITEMS.register("blaze_helmet",
             () -> new BlazeHelmetItem(AEArmorMaterials.BLAZE, ArmorItem.Type.HELMET,
@@ -70,10 +75,12 @@ public class AEItems {
     public static DeferredItem<Item> star_dessert = ITEMS.register("star_dessert",
             ()-> new Item(new Item.Properties().fireResistant().rarity(ModRarities.EPIC).stacksTo(16).food(AEFoods.star_dessert)));
     public static DeferredItem<Item> singularity_stew = ITEMS.register("singularity_stew",
-            ()-> new Item(new Item.Properties().fireResistant().rarity(ModRarities.EPIC).stacksTo(16).food(AEFoods.star_dessert)));
+            ()-> new Item(new Item.Properties().fireResistant().rarity(ModRarities.EPIC).stacksTo(16).food(AEFoods.singularity_stew)));
 
     public static DeferredItem<Item> infinity_bottle= ITEMS.register("infinity_bottle",
-            ()-> new InfinityBottleItem(new Item.Properties().fireResistant().rarity(ModRarities.EPIC).stacksTo(1)));
+            ()-> new InfinityBottleItem(new Item.Properties().fireResistant().rarity(ModRarities.COSMIC.getValue()).stacksTo(1)));
+    public static DeferredItem<Item> infinity_shears= ITEMS.register("infinity_shears",
+            ()-> new InfinityShearsItem(new Item.Properties().fireResistant().rarity(ModRarities.COSMIC.getValue()).stacksTo(1)));
 
 
 

@@ -19,13 +19,14 @@ out float vertexDistance;
 out vec4 vertexColor;
 out vec2 texCoord0;
 out vec4 normal;
+out vec3 fPos;
 
 void main() {
-    vec4 worldPos = ModelViewMat * vec4(Position, 1.0);
-    gl_Position = ProjMat * worldPos;
+    gl_Position = ProjMat * ModelViewMat * vec4(Position, 1.0);
+    fPos = (ModelViewMat * vec4(Position, 1.0)).xyz;
 
-    vertexDistance = fog_distance(worldPos.xyz, FogShape);
+    vertexDistance = fog_distance(Position, FogShape);
     vertexColor = Color * minecraft_sample_lightmap(Sampler2, UV2);
     texCoord0 = UV0;
-    normal = worldPos * vec4(Normal, 0.0);
+    normal = ProjMat * ModelViewMat * vec4(Normal, 0.0);
 }

@@ -7,5 +7,20 @@
   "item.avaritia_expand.neutron_hoe": "Neutronium Hoe",
   "item.avaritia_expand.star": "Miniature Star",
   "item.avaritia_expand.star_dessert": "Star Dessert",
-  "item.avaritia_expand.singularity_stew": "Singularity Stew"
+  "item.avaritia_expand.singularity_stew": "Singularity Stew",
+  "item.avaritia_expand.blaze_helmet": "Blaze Helmet",
+  "item.avaritia_expand.blaze_chestplate": "Blaze Chestplate",
+  "item.avaritia_expand.blaze_leggings": "Blaze Leggings",
+  "item.avaritia_expand.blaze_boots": "Blaze Boots",
+  "item.avaritia_expand.crystal_helmet": "Crystal Matrix Helmet",
+  "item.avaritia_expand.crystal_chestplate": "Crystal Matrix Chestplate",
+  "item.avaritia_expand.crystal_leggings": "Crystal Matrix Leggings",
+  "item.avaritia_expand.crystal_boots": "Crystal Matrix Boots",
+  "item.avaritia_expand.infinity_bottle": "Infinity Bottle",
+  "item.avaritia_expand.infinity_shears": "Infinity Shears",
+  "block.avaritia_expand.infinity_tnt_block": "Infinity TNT",
+  "block.avaritia_expand.jeb_wool": "Jeb_ Wool",
+  "block.avaritia_expand.jeb_carpet": "Jeb_ Carpet",
+  "tooltip.avaritia.tool.range": "Range",
+  "tooltip.avaritia_expand.infinity_shears.desc": "You mean you really craft it? Suit yourself."
 }

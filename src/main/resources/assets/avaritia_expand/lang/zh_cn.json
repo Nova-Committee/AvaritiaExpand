@@ -1,5 +1,5 @@
 {
-  "itemGroup.tab.avaritia_expand": "无尽:拓展",
+  "itemGroup.tab.avaritia_expand": "无尽：拓展",
   "item.avaritia_expand.neutron_sword": "中子剑",
   "item.avaritia_expand.neutron_axe": "中子斧",
   "item.avaritia_expand.neutron_pickaxe": "中子镐",
@@ -7,5 +7,20 @@
   "item.avaritia_expand.neutron_hoe": "中子锄",
   "item.avaritia_expand.star": "微缩恒星",
   "item.avaritia_expand.star_dessert": "恒星甜点",
-  "item.avaritia_expand.singularity_stew": "奇点汤"
+  "item.avaritia_expand.singularity_stew": "奇点汤",
+  "item.avaritia_expand.blaze_helmet": "炽骸之焚颅冠盔",
+  "item.avaritia_expand.blaze_chestplate": "炽烬之熔心铠胄",
+  "item.avaritia_expand.blaze_leggings": "炽渊之断岳胫甲",
+  "item.avaritia_expand.blaze_boots": "炽陨之裂地战靴",
+  "item.avaritia_expand.crystal_helmet": "晶纹避矢头盔",
+  "item.avaritia_expand.crystal_chestplate": "晶纹护佑胸甲",
+  "item.avaritia_expand.crystal_leggings": "晶纹裹胫护腿",
+  "item.avaritia_expand.crystal_boots": "晶纹减坠双靴",
+  "item.avaritia_expand.infinity_bottle": "无尽瓶",
+  "item.avaritia_expand.infinity_shears": "无尽剪刀",
+  "block.avaritia_expand.infinity_tnt_block": "无尽TNT",
+  "block.avaritia_expand.jeb_wool": "开发者羊毛",
+  "block.avaritia_expand.jeb_carpet": "开发者地毯",
+  "tooltip.avaritia.tool.range": "范围",
+  "tooltip.avaritia_expand.infinity_shears.desc": "你的意思是你真的做了?随你便吧"
 }

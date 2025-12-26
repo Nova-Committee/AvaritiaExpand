@@ -13,4 +13,9 @@ public class AEFoods {
             .effect(() -> new MobEffectInstance(MobEffects.SATURATION, (int)Math.ceil((double)3600.0F * ratio), 1),1.0F)
             .effect(() -> new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, (int)Math.ceil((double)3600.0F * ratio), 2),1.0F)
             .build();
+    public static final FoodProperties singularity_stew = new FoodProperties.Builder()
+            .nutrition(999999999).saturationModifier(999999999)
+            .effect(() -> new MobEffectInstance(MobEffects.SATURATION, (int)Math.ceil((double)12000.0F * ratio), 1), 1.0F)
+            .effect(() -> new MobEffectInstance(MobEffects.DAMAGE_BOOST, (int)Math.ceil((double)12000.0F * ratio), 2),1.0F)
+            .build();
 }

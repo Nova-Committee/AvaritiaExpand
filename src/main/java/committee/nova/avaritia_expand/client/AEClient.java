@@ -1,7 +1,7 @@
 package committee.nova.avaritia_expand.client;
 
 import committee.nova.avaritia_expand.AvaritiaExpand;
-import committee.nova.avaritia_expand.client.model.loader.GlowEdgeModelLoader;
+import committee.nova.avaritia_expand.client.model.loader.GlowModelLoader;
 import committee.nova.avaritia_expand.client.shader.AEShaders;
 import committee.nova.avaritia_expand.init.registry.AEEntities;
 import committee.nova.mods.avaritia.client.screen.AvaritiaConfigScreen;
@@ -20,7 +20,7 @@ public class AEClient {
     @SubscribeEvent
     public static void registerLoaders(ModelEvent.RegisterGeometryLoaders event) {
 
-        event.register(AvaritiaExpand.rl("glow_edge"), GlowEdgeModelLoader.INSTANCE);
+        event.register(AvaritiaExpand.rl("glow"), GlowModelLoader.INSTANCE);
     }
     @SubscribeEvent(priority = EventPriority.HIGHEST)
     public static void onRegisterShaders(RegisterShadersEvent event) {

@@ -7,20 +7,18 @@ import net.minecraft.client.renderer.ShaderInstance;
 import net.neoforged.neoforge.client.event.RegisterShadersEvent;
 
 public class AEShaders {
+    public static ShaderInstance GLOW_SHADER;
+
+    public static AbstractUniform glowIntensity;
     public static AbstractUniform glowColor;
-    public static AbstractUniform glowWidth;
-    public static AbstractUniform glowTime;
-    public static ShaderInstance GLOW_EDGE_SHADER;
     public static void onRegisterShaders(RegisterShadersEvent event){
         try {
 
-            event.registerShader(new ShaderInstance(event.getResourceProvider(), AvaritiaExpand.rl("glow_edge"), DefaultVertexFormat.BLOCK), shader -> {
-                GLOW_EDGE_SHADER = shader;
-                glowColor = GLOW_EDGE_SHADER.safeGetUniform("glowColor");
-                glowWidth = GLOW_EDGE_SHADER.safeGetUniform("glowWidth");
-                glowTime = GLOW_EDGE_SHADER.safeGetUniform("time");
-
-                GLOW_EDGE_SHADER.apply();
+            event.registerShader(new ShaderInstance(event.getResourceProvider(), AvaritiaExpand.rl("glow"), DefaultVertexFormat.BLOCK), shader -> {
+                GLOW_SHADER = shader;
+                glowIntensity = GLOW_SHADER.safeGetUniform("glowIntensity");
+                glowColor = GLOW_SHADER.safeGetUniform("glowColor");
+                GLOW_SHADER.apply();
             });
 
 

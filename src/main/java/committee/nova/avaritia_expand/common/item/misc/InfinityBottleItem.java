@@ -41,7 +41,7 @@ public class InfinityBottleItem extends Item implements ProjectileItem {
         }
 
         player.awardStat(Stats.ITEM_USED.get(this));
-
+        player.getCooldowns().addCooldown(this, 8);
         return InteractionResultHolder.sidedSuccess(itemstack, level.isClientSide());
     }
 
