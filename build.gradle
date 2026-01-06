@@ -81,6 +81,18 @@ repositories {
             includeGroup "curse.maven"
         }
     }
+
+    exclusiveContent {
+        forRepository {
+            maven {
+                name = 'GeckoLib'
+                url = 'https://dl.cloudsmith.io/public/geckolib3/geckolib/maven/'
+            }
+        }
+        filter {
+            includeGroup('software.bernie.geckolib')
+        }
+    }
 }
 
 dependencies {
@@ -88,6 +100,7 @@ dependencies {
     implementation "curse.maven:curios-309927:6529130"
     implementation "curse.maven:jade-324717:6853386"
     implementation "curse.maven:jei-238222:7270455"
+    implementation "software.bernie.geckolib:geckolib-neoforge-${minecraft_version}:4.8.2"
 }
 
 var generateModMetadata = tasks.register("generateModMetadata", ProcessResources) {
