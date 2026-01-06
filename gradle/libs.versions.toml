@@ -1,0 +1,19 @@
+[versions]
+reavaritia = "7281327"
+curios     = "9.5.1+1.21.1"
+geckolib   = "4.8.2"
+jade       = "15.10.3+neoforge"
+jei        = "19.27.0.340"
+
+[libraries]
+reavaritia       = { module = "curse.maven:re-avaritia-623969"                   , version.ref = "reavaritia"}
+curios           = { module = "top.theillusivec4.curios:curios-neoforge"         , version.ref = "curios"}
+geckolib         = { module = "software.bernie.geckolib:geckolib-neoforge-1.21.1", version.ref = "geckolib"}
+jade             = { module = "maven.modrinth:jade"                              , version.ref = "jade"}
+jei-api-common   = { module = "mezz.jei:jei-1.21.1-common-api"                   , version.ref = "jei" }
+jei-api-neoforge = { module = "mezz.jei:jei-1.21.1-neoforge-api"                 , version.ref = "jei" }
+jei-impl         = { module = "mezz.jei:jei-1.21.1-neoforge"                     , version.ref = "jei" }
+
+[bundles]
+jei = ["jei-api-common", "jei-api-neoforge", "jei-impl"]
+
