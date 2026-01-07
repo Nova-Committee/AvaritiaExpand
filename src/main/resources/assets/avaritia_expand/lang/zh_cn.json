@@ -22,5 +22,6 @@
   "block.avaritia_expand.jeb_wool": "开发者羊毛",
   "block.avaritia_expand.jeb_carpet": "开发者地毯",
   "tooltip.avaritia.tool.range": "范围",
-  "tooltip.avaritia_expand.infinity_shears.desc": "你的意思是你真的做了?随你便吧"
+  "tooltip.avaritia_expand.infinity_shears.desc": "你的意思是你真的做了?随你便吧",
+  "entity.avaritia_expand.infinity_tnt_entity":"无尽TNT"
 }

@@ -22,5 +22,6 @@
   "block.avaritia_expand.jeb_wool": "Jeb_ Wool",
   "block.avaritia_expand.jeb_carpet": "Jeb_ Carpet",
   "tooltip.avaritia.tool.range": "Range",
-  "tooltip.avaritia_expand.infinity_shears.desc": "You mean you really craft it? Suit yourself."
+  "tooltip.avaritia_expand.infinity_shears.desc": "You mean you really craft it? Suit yourself.",
+  "entity.avaritia_expand.infinity_tnt_entity":"Infinity TNT"
 }

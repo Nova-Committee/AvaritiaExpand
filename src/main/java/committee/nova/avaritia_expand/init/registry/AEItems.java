@@ -43,6 +43,9 @@ public class AEItems {
             ()-> new NeutronHoeItem(ModToolTiers.CRYSTAL,new Item.Properties()
                     .fireResistant().rarity(ModRarities.EPIC).stacksTo(1).attributes(createAttributes(ModToolTiers.CRYSTAL, 0, -3)).component(ModDataComponents.TOOL_MODE, ToolMode.DEFAULT)));
 
+
+
+
         public static  DeferredItem<ArmorItem> blaze_helmet = ITEMS.register("blaze_helmet",
             () -> new BlazeHelmetItem(AEArmorMaterials.BLAZE, ArmorItem.Type.HELMET,
                     new Item.Properties().durability(7777).fireResistant()));
