@@ -1,5 +1,6 @@
 package committee.nova.avaritia_expand.common.item.tool.neutron;
 
+import committee.nova.avaritia_expand.init.registry.AEConfig;
 import committee.nova.mods.avaritia.api.iface.transform.IToolTransform;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
@@ -31,7 +32,7 @@ public class NeutronSwordItem extends SwordItem implements IToolTransform {
 
         if (!level.isClientSide && !player.getCooldowns().isOnCooldown(this)) {
 
-            Vec3 targetPos = player.pick(64.0D, 0.0F, false).getLocation();
+            Vec3 targetPos = player.pick(AEConfig.neutronSwordMaxRange.get(), 0.0F, false).getLocation();
 
             player.teleportTo(targetPos.x, targetPos.y, targetPos.z);
 

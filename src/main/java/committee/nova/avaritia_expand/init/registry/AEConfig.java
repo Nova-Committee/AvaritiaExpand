@@ -9,9 +9,9 @@ public class AEConfig {
     public static final ModConfigSpec COMMON;
 
     public static final ModConfigSpec.IntValue infinityTntMaxExplosionTime;
-
-
     public static final ModConfigSpec.LongValue infinityTntMaxRange;
+
+    public static final ModConfigSpec.IntValue neutronSwordMaxRange;
 
 
 
@@ -21,6 +21,10 @@ public class AEConfig {
         common.push("blocks");
         infinityTntMaxExplosionTime = buildInt(common, "infinity_tnt_max_explosion_time", 8000, 0, Integer.MAX_VALUE, "Recommended setting is 2000-8000");
         infinityTntMaxRange = buildLong(common, "infinity_tnt_max_range", 256, 0, Long.MAX_VALUE, "The maximum range of the Infinity TNT");
+        common.pop();
+        neutronSwordMaxRange = buildInt(common, "neutron_sword_max_range", 64, 0, 64, "The maximum teleportation distance of the Neutronium Sword");
+        common.push("tools");
+
         common.pop();
         COMMON = common.build();
     }

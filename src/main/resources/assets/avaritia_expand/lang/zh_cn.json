@@ -23,5 +23,14 @@
   "block.avaritia_expand.jeb_carpet": "开发者地毯",
   "tooltip.avaritia.tool.range": "范围",
   "tooltip.avaritia_expand.infinity_shears.desc": "你的意思是你真的做了?随你便吧",
-  "entity.avaritia_expand.infinity_tnt_entity":"无尽TNT"
+  "entity.avaritia_expand.infinity_tnt_entity":"无尽TNT",
+  "title.avaritia_expand.config.title": "无尽贪婪：拓展",
+  "config.avaritia_expand.category.blocks": "方块",
+  "config.avaritia_expand.category.tools": "工具",
+  "config.avaritia_expand.infinity_tnt_max_explosion_time": "无尽TNT爆炸时间",
+  "config.avaritia_expand.infinity_tnt_max_range": "无尽TNT爆炸范围",
+  "config.avaritia_expand.neutron_sword_max_range": "中子剑传送范围",
+  "config.avaritia_expand.infinity_tnt_max_explosion_time.tooltip": "推荐设置是2000-8000",
+  "config.avaritia_expand.infinity_tnt_max_range.tooltip": "无尽TNT的最大爆炸范围",
+  "config.avaritia_expand.neutron_sword_max_range.tooltip": "中子剑的最大传送距离"
 }

@@ -2,6 +2,7 @@ package committee.nova.avaritia_expand.client;
 
 import committee.nova.avaritia_expand.AvaritiaExpand;
 import committee.nova.avaritia_expand.client.model.loader.GlowModelLoader;
+import committee.nova.avaritia_expand.client.screen.AEConfigScreen;
 import committee.nova.avaritia_expand.client.shader.AEShaders;
 import committee.nova.avaritia_expand.common.item.armor.crystal.CrystalArmorItem;
 import committee.nova.avaritia_expand.init.registry.AEEntities;
@@ -39,7 +40,7 @@ public class AEClient {
     @SubscribeEvent
     public static void clientSetUp(FMLClientSetupEvent event) {
         ModList.get().getModContainerById(AvaritiaExpand.MOD_ID).orElseThrow().registerExtensionPoint(IConfigScreenFactory.class,
-                (container, last) -> new AvaritiaConfigScreen(last));
+                (container, last) -> new AEConfigScreen(last));
         AEEntities.onClientSetup();
     }
 
