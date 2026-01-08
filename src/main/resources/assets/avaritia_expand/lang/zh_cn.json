@@ -33,5 +33,7 @@
   "config.avaritia_expand.neutron_sword_max_range": "中子剑传送范围",
   "config.avaritia_expand.infinity_tnt_max_explosion_time.tooltip": "推荐设置是2000-8000",
   "config.avaritia_expand.infinity_tnt_max_range.tooltip": "无尽TNT的最大爆炸范围",
-  "config.avaritia_expand.neutron_sword_max_range.tooltip": "中子剑的最大传送距离"
+  "config.avaritia_expand.neutron_sword_max_range.tooltip": "中子剑的最大传送距离",
+  "advancements.avaritia_expand.infinity_shears.desc": "Never gonna give you up",
+  "advancements.avaritia_expand.infinity_shears.title": "你被整了"
 }

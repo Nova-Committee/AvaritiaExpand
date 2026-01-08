@@ -33,5 +33,7 @@
   "config.avaritia_expand.neutron_sword_max_range": "Neutronium Sword TP Range",
   "config.avaritia_expand.infinity_tnt_max_explosion_time.tooltip": "Recommended setting is 2000-8000",
   "config.avaritia_expand.infinity_tnt_max_range.tooltip": "The maximum range of the Infinity TNT",
-  "config.avaritia_expand.neutron_sword_max_range.tooltip": "The maximum teleportation distance of the Neutronium Sword"
+  "config.avaritia_expand.neutron_sword_max_range.tooltip": "The maximum teleportation distance of the Neutronium Sword",
+  "advancements.avaritia_expand.infinity_shears.desc": "Never gonna give you up",
+  "advancements.avaritia_expand.infinity_shears.title": "You got tricked"
 }
