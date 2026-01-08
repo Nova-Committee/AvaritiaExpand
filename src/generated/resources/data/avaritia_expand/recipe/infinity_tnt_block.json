@@ -1,0 +1,33 @@
+{
+  "type": "avaritia:shaped_table",
+  "key": {
+    "A": {
+      "item": "minecraft:tnt"
+    },
+    "B": {
+      "item": "avaritia:neutron_pile"
+    },
+    "C": {
+      "item": "avaritia:infinity_nugget"
+    },
+    "E": {
+      "item": "avaritia:infinity_catalyst"
+    }
+  },
+  "pattern": [
+    "AAAAAAAAA",
+    "AAAAAAAAA",
+    "AAAAAAAAA",
+    "AAACBCAAA",
+    "AAABEBAAA",
+    "AAACBCAAA",
+    "AAAAAAAAA",
+    "AAAAAAAAA",
+    "AAAAAAAAA"
+  ],
+  "result": {
+    "count": 1,
+    "id": "avaritia_expand:infinity_tnt_block"
+  },
+  "tier": 4
+}

@@ -1,0 +1,27 @@
+{
+  "type": "avaritia:shaped_table",
+  "key": {
+    "B": {
+      "item": "avaritia:crystal_matrix_ingot"
+    },
+    "C": {
+      "item": "avaritia:crystal_matrix"
+    },
+    "D": {
+      "item": "avaritia:neutron_ingot"
+    }
+  },
+  "pattern": [
+    " CCCCC ",
+    " CBBBC ",
+    " CBBBC ",
+    " CB BC ",
+    " CC CC ",
+    " DB BD "
+  ],
+  "result": {
+    "count": 1,
+    "id": "avaritia_expand:crystal_leggings"
+  },
+  "tier": 3
+}

@@ -1,0 +1,8 @@
+{
+  "type": "avaritia_expand:singularity_stew",
+  "ingredients": [
+    {
+      "item": "avaritia:neutron_nugget"
+    }
+  ]
+}

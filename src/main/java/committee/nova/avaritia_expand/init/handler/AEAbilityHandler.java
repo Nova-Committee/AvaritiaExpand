@@ -268,9 +268,14 @@ public class AEAbilityHandler {
         if (event.getEntity() instanceof Player player) {
             if (isWearingCrystalChestplate(player)) {
 
-                player.getActiveEffects().removeIf(effect -> {
-                    return !effect.getEffect().value().isBeneficial();
-                });
+                var harmfulEffects = player.getActiveEffects().stream()
+                        .filter(effect -> !effect.getEffect().value().isBeneficial())
+                        .map(MobEffectInstance::getEffect)
+                        .toList();
+
+                for (var effect : harmfulEffects) {
+                    player.removeEffect(effect);
+                }
 
                 player.addEffect(new MobEffectInstance(MobEffects.LUCK, 40, 0, false, false, false));
             }

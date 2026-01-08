@@ -1,0 +1,17 @@
+{
+  "type": "avaritia:shaped_table",
+  "key": {
+    "a": {
+      "item": "avaritia:infinity_ingot"
+    }
+  },
+  "pattern": [
+    " a",
+    "a "
+  ],
+  "result": {
+    "count": 1,
+    "id": "avaritia_expand:infinity_shears"
+  },
+  "tier": 1
+}

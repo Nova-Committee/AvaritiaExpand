@@ -2,7 +2,9 @@ package committee.nova.avaritia_expand.common.block;
 
 import com.mojang.serialization.MapCodec;
 import committee.nova.avaritia_expand.common.entity.InfinityTntEntity;
+import committee.nova.mods.avaritia.api.iface.ITooltip;
 import net.minecraft.core.BlockPos;
+import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.stats.Stats;
@@ -15,6 +17,7 @@ import net.minecraft.world.entity.projectile.Projectile;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Explosion;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
@@ -27,8 +30,9 @@ import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraft.world.phys.BlockHitResult;
 
 import javax.annotation.Nullable;
+import java.util.List;
 
-public class InfinityTntBlock extends Block {
+public class InfinityTntBlock extends Block implements ITooltip {
 
     public static final MapCodec<InfinityTntBlock> CODEC = simpleCodec(InfinityTntBlock::new);
     public static final BooleanProperty UNSTABLE = BlockStateProperties.UNSTABLE;
@@ -145,5 +149,14 @@ public class InfinityTntBlock extends Block {
         builder.add(UNSTABLE);
     }
 
+    @Override
+    public void appendHoverText(ItemStack stack, Item.TooltipContext context, List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
+        tooltipComponents.add(Component.translatable("tooltip.avaritia_expand.infinity_tnt_block.desc"));
+        super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
+    }
 
+    @Override
+    public boolean hasDescTooltip() {
+        return true;
+    }
 }
