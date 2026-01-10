@@ -164,7 +164,7 @@ public class AERecipes extends RecipeProvider implements IConditionBuilder {
                 .unlockedBy("has_item", has(ModItems.neutron_pile.get())).save(consumer);
 
         // Infinity Bottle
-        ModShapedRecipeBuilder.shaped(RecipeCategory.MISC, AEItems.infinity_bottle.get())
+        ModShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, AEItems.infinity_bottle.get())
                 .pattern("   ABA   ")
                 .pattern("   ADA   ")
                 .pattern("   A A   ")
@@ -181,6 +181,25 @@ public class AERecipes extends RecipeProvider implements IConditionBuilder {
                 .define('E', ModItems.infinity_catalyst.get())
                 .define('F', Items.DRAGON_BREATH)
                 .unlockedBy("has_item", has(ModBlocks.neutron.get())).save(consumer);
+
+        //Neutron Decomposer
+
+        ModShapedRecipeBuilder.shaped(RecipeCategory.MISC, AEBlocks.neutron_decompose.get())
+                .pattern("AAAEEEAAA")
+                .pattern("E ADDDA E")
+                .pattern("A  DDD  A")
+                .pattern("E  DDD  E")
+                .pattern("C  DDD  C")
+                .pattern("E  DBD  E")
+                .pattern("A DDDDD A")
+                .pattern("E       E")
+                .pattern("AAAEAEAAA")
+                .define('A', Items.IRON_BLOCK)
+                .define('B', ModBlocks.neutron.get())
+                .define('C', Items.REDSTONE_BLOCK)
+                .define('D', ModItems.neutron_ingot.get())
+                .define('E', ModItems.crystal_matrix_ingot.get())
+                .unlockedBy("has_item", has(ModItems.singularity.get())).save(consumer);
 
         // Neutron Tools
         ModShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, AEItems.neutron_sword.get(),3)

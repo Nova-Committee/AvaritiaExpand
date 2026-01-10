@@ -21,7 +21,6 @@ public class AECreativeModeTabs {
                 output.accept(AEItems.neutron_pickaxe.get());
                 output.accept(AEItems.neutron_shovel.get());
                 output.accept(AEItems.neutron_hoe.get());
-                output.accept(AEItems.star.get());
                 output.accept(AEItems.star_dessert.get());
                 output.accept(AEItems.singularity_stew.get());
                 output.accept(AEItems.infinity_bottle.get());
@@ -34,6 +33,7 @@ public class AECreativeModeTabs {
                 output.accept(AEItems.crystal_chestplate.get());
                 output.accept(AEItems.crystal_leggings.get());
                 output.accept(AEItems.crystal_boots.get());
+                output.accept(AEBlocks.neutron_decompose.get());
                 output.accept(AEBlocks.infinity_tnt_block.get());
                 output.accept(AEBlocks.jeb_wool.get());
                 output.accept(AEBlocks.jeb_carpet.get());

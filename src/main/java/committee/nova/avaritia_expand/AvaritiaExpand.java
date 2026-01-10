@@ -21,6 +21,7 @@ public class AvaritiaExpand {
         AECreativeModeTabs.register(bus);
         AEEntities.register(bus);
         AEBlocks.register(bus);
+        AEBlockEntities.register(bus);
         AERecipeSerializers.SERIALIZERS.register(bus);
     }
 

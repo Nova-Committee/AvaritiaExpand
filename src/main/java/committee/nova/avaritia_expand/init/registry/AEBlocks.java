@@ -3,6 +3,7 @@ package committee.nova.avaritia_expand.init.registry;
 import committee.nova.avaritia_expand.AvaritiaExpand;
 import committee.nova.avaritia_expand.common.block.InfinityTntBlock;
 import committee.nova.avaritia_expand.common.block.JebCarpetBlock;
+import committee.nova.avaritia_expand.common.block.NeutronDecomposeBlock;
 import committee.nova.mods.avaritia.init.registry.ModRarities;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
@@ -20,9 +21,10 @@ public class AEBlocks {
     public static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(AvaritiaExpand.MOD_ID);
 
 
-    public static DeferredBlock<Block> infinity_tnt_block = itemBlock("infinity_tnt_block", () -> new InfinityTntBlock(BlockBehaviour.Properties.of()),ModRarities.COSMIC.getValue());
+    public static DeferredBlock<Block> infinity_tnt_block = itemBlock("infinity_tnt_block", () -> new InfinityTntBlock(BlockBehaviour.Properties.of().strength(5F,2000F)),ModRarities.COSMIC.getValue());
     public static DeferredBlock<Block> jeb_wool = itemBlock("jeb_wool", () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_WOOL)));
     public static DeferredBlock<Block> jeb_carpet = itemBlock("jeb_carpet", () -> new JebCarpetBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_CARPET)));
+    public static DeferredBlock<Block> neutron_decompose = itemBlock("neutron_decompose", () -> new NeutronDecomposeBlock(BlockBehaviour.Properties.of().strength(50F,2000F)),ModRarities.RARE);
 
 
 

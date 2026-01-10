@@ -1,0 +1,36 @@
+{
+  "type": "avaritia:shaped_table",
+  "key": {
+    "A": {
+      "item": "minecraft:iron_block"
+    },
+    "B": {
+      "item": "avaritia:neutron"
+    },
+    "C": {
+      "item": "minecraft:redstone_block"
+    },
+    "D": {
+      "item": "avaritia:neutron_ingot"
+    },
+    "E": {
+      "item": "avaritia:crystal_matrix_ingot"
+    }
+  },
+  "pattern": [
+    "AAAEEEAAA",
+    "E ADDDA E",
+    "A  DDD  A",
+    "E  DDD  E",
+    "C  DDD  C",
+    "E  DBD  E",
+    "A DDDDD A",
+    "E       E",
+    "AAAEAEAAA"
+  ],
+  "result": {
+    "count": 1,
+    "id": "avaritia_expand:neutron_decompose"
+  },
+  "tier": 4
+}

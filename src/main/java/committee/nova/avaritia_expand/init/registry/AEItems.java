@@ -73,8 +73,6 @@ public class AEItems {
                     new Item.Properties().durability(8888)));
 
 
-    public static DeferredItem<Item> star = ITEMS.register("star",
-            ()-> new Item(new Item.Properties().fireResistant().rarity(ModRarities.COSMIC.getValue()).stacksTo(16)));
     public static DeferredItem<Item> star_dessert = ITEMS.register("star_dessert",
             ()-> new Item(new Item.Properties().fireResistant().rarity(ModRarities.EPIC).stacksTo(16).food(AEFoods.star_dessert)));
     public static DeferredItem<Item> singularity_stew = ITEMS.register("singularity_stew",

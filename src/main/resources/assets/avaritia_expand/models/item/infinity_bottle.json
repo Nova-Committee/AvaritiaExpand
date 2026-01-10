@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "avaritia_expand:item/misc/infinity_bottle/layer_0",
+    "layer0": "avaritia_expand:item/tools/infinity_bottle/layer_0",
     "halo": "avaritia:misc/halo"
   },
   "loader": "avaritia:halo",
