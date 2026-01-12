@@ -83,7 +83,7 @@ dependencies {
 
     minecraft "net.minecraftforge:forge:${minecraft_version}-${forge_version}"
     //Avaritia
-    implementation fg.deobf("curse.maven:re-avaritia-623969:6956226")
+    implementation fg.deobf("curse.maven:re-avaritia-623969:7445855")
     //JEI
     compileOnly fg.deobf("mezz.jei:jei-${minecraft_version}-common-api:${jei_version}")
     compileOnly fg.deobf("mezz.jei:jei-${minecraft_version}-forge-api:${jei_version}")

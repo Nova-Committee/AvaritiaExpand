@@ -3,9 +3,9 @@
   "parent": "block/cube",
   "textures": {
     "north": "avaritia_expand:block/crystal_furnace_front",
-    "east": "avaritia:block/machine/collector/collector_side_left",
+    "east": "avaritia:block/machine/collector/collector_side_right",
     "south": "avaritia:block/machine/collector/frame",
-    "west": "avaritia:block/machine/collector/collector_side_right",
+    "west": "avaritia:block/machine/collector/collector_side_left",
     "up": "avaritia:block/machine/collector/collector_top",
     "down": "avaritia:block/machine/collector/frame",
     "particle": "avaritia:block/machine/collector/collector_top"

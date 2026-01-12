@@ -13,7 +13,6 @@ import com.cu6.avaritia_expand.item.ModItems;
 import com.cu6.avaritia_expand.screen.BlazeFurnaceScreen;
 import com.cu6.avaritia_expand.screen.CrystalFurnaceScreen;
 import com.cu6.avaritia_expand.screen.ModMenuTypes;
-import com.cu6.avaritia_expand.screen.NeutronDecomposeScreen;
 import com.mojang.logging.LogUtils;
 import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.renderer.entity.EntityRenderers;
@@ -74,7 +73,6 @@ public class AvaritiaExpand {
             ModItemProperties.register(event);
             MenuScreens.register(ModMenuTypes.BLAZE_FURNACE_MENU.get(), BlazeFurnaceScreen::new);
             MenuScreens.register(ModMenuTypes.CRYSTAL_FURNACE_MENU.get(), CrystalFurnaceScreen::new);
-            MenuScreens.register(ModMenuTypes.NEUTRON_DECOMPOSE_MENU.get(), NeutronDecomposeScreen::new);
             EntityRenderers.register(ModEntities.INFINITY_TNT_ENTITY.get(), InfinityTNTRenderer::new);
             EntityRenderers.register(ModEntities.CRYSTAL_TNT_ENTITY.get(), CrystalTNTRenderer::new);
             EntityRenderers.register(ModEntities.INFINITY_FISHING_HOOK.get(), InfinityFishingHookRender::new);
