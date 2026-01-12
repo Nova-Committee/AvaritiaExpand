@@ -1,0 +1,23 @@
+{
+  "type": "avaritia:extreme_smithing",
+  "addition": [
+    {
+      "item": "avaritia:neutron_gear"
+    },
+    {
+      "item": "minecraft:heart_of_the_sea"
+    },
+    {
+      "item": "avaritia:enhancement_core"
+    }
+  ],
+  "base": {
+    "item": "minecraft:fishing_rod"
+  },
+  "result": {
+    "item": "avaritia_expand:infinity_fishing_rod"
+  },
+  "template": {
+    "item": "avaritia:upgrade_smithing_template"
+  }
+}

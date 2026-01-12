@@ -1,0 +1,43 @@
+{
+  "type": "avaritia:shaped_table",
+  "category": "equipment",
+  "key": {
+    "A": {
+      "item": "avaritia:neutron_ingot"
+    },
+    "B": {
+      "item": "minecraft:quartz_block"
+    },
+    "D": {
+      "item": "avaritia:infinity_catalyst"
+    },
+    "E": {
+      "item": "minecraft:experience_bottle"
+    },
+    "F": {
+      "item": "avaritia:neutron"
+    },
+    "G": {
+      "item": "minecraft:glass"
+    },
+    "H": {
+      "item": "avaritia:infinity_nugget"
+    }
+  },
+  "pattern": [
+    "   AAA   ",
+    "  ABFBA  ",
+    "  AGEGA  ",
+    "  AGHGA  ",
+    " AGEHEGA ",
+    " AGEDEGA ",
+    " AGEEEGA ",
+    "  AGGGA  ",
+    "   AAA   "
+  ],
+  "result": {
+    "item": "avaritia_expand:infinity_experience_bottle"
+  },
+  "show_notification": true,
+  "tier": 4
+}

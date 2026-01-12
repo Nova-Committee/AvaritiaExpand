@@ -1,0 +1,13 @@
+{
+  "render_type": "cutout",
+  "parent": "block/cube",
+  "textures": {
+    "north": "avaritia_expand:block/blaze_furnace_side",
+    "east": "avaritia_expand:block/blaze_furnace_side",
+    "south": "avaritia_expand:block/blaze_furnace_side",
+    "west": "avaritia_expand:block/blaze_furnace_side",
+    "up": "avaritia_expand:block/blaze_furnace_top",
+    "down": "avaritia:block/machine/craft/nether_crafting_table_bottom",
+    "particle": "avaritia_expand:block/blaze_furnace_side"
+  }
+}
