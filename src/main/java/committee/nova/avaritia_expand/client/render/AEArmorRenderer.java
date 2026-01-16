@@ -15,7 +15,7 @@ import software.bernie.geckolib.util.RenderUtil;
 
 public class AEArmorRenderer<T extends Item & GeoItem> extends GeoArmorRenderer<T> {
 
-    protected GeoBone wrist;
+    protected GeoBone waist;
 
     public AEArmorRenderer(String path) {
         super(new DefaultedGeoModel<>(AvaritiaExpand.rl(path)) {
@@ -26,14 +26,14 @@ public class AEArmorRenderer<T extends Item & GeoItem> extends GeoArmorRenderer<
         });
     }
 
-    public GeoBone getWrist(GeoModel<T> model) {
-        return model.getBone("armorWrist").orElse(null);
+    public GeoBone getWaist(GeoModel<T> model) {
+        return model.getBone("armorWaist").orElse(null);
     }
 
     @Override
     protected void grabRelevantBones(BakedGeoModel bakedModel) {
         super.grabRelevantBones(bakedModel);
-        this.wrist = getWrist(getGeoModel());
+        this.waist = getWaist(getGeoModel());
     }
 
     @Override
@@ -41,7 +41,7 @@ public class AEArmorRenderer<T extends Item & GeoItem> extends GeoArmorRenderer<
         super.applyBoneVisibilityBySlot(currentSlot);
         HumanoidModel<?> model = this;
         if (currentSlot == EquipmentSlot.LEGS) {
-            setBoneVisible(wrist, model.body.visible);
+            setBoneVisible(waist, model.body.visible);
         }
     }
 
@@ -49,23 +49,23 @@ public class AEArmorRenderer<T extends Item & GeoItem> extends GeoArmorRenderer<
     public void applyBoneVisibilityByPart(EquipmentSlot currentSlot, ModelPart currentPart, HumanoidModel<?> model) {
         super.applyBoneVisibilityByPart(currentSlot, currentPart, model);
         if (currentSlot == EquipmentSlot.LEGS && currentPart == model.body) {
-            setBoneVisible(wrist, true);
+            setBoneVisible(waist, true);
         }
     }
 
     @Override
     protected void applyBaseTransformations(HumanoidModel<?> baseModel) {
         super.applyBaseTransformations(baseModel);
-        if (wrist != null) {
+        if (waist != null) {
             ModelPart bodyPart = baseModel.body;
-            RenderUtil.matchModelPartRot(bodyPart, wrist);
-            wrist.updatePosition(bodyPart.x, -bodyPart.y, bodyPart.z);
+            RenderUtil.matchModelPartRot(bodyPart, waist);
+            waist.updatePosition(bodyPart.x, -bodyPart.y, bodyPart.z);
         }
     }
 
     @Override
     protected void setAllBonesVisible(boolean visible) {
         super.setAllBonesVisible(visible);
-        setBoneVisible(wrist, visible);
+        setBoneVisible(waist, visible);
     }
 }
