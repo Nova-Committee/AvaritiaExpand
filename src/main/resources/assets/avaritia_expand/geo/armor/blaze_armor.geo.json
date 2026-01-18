@@ -336,12 +336,12 @@
 					]
 				},
 				{
-					"name": "wrist",
+					"name": "waist",
 					"parent": "armorBody",
 					"pivot": [0, 12, 0]
 				},
 				{
-					"name": "armorWrist",
+					"name": "armorWaist",
 					"parent": "bipedBody",
 					"pivot": [0, 24, 0],
 					"cubes": [

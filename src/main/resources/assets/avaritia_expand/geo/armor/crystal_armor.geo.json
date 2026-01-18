@@ -599,7 +599,7 @@
 					]
 				},
 				{
-					"name": "armorWrist",
+					"name": "armorWaist",
 					"parent": "bipedBody",
 					"pivot": [0, 24, 0],
 					"cubes": [
