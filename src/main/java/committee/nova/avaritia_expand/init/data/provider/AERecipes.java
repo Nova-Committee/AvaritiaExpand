@@ -261,6 +261,22 @@ public class AERecipes extends RecipeProvider implements IConditionBuilder {
                 .define('A', ModBlocks.neutron.get())
                 .define('D', ModItems.neutron_ingot.get())
                 .unlockedBy("has_item", has(ModItems.neutron_ingot.get())).save(consumer);
+
+        ModShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, AEItems.neutron_mobile.get(),3)
+                .pattern("A      ")
+                .pattern("DDD    ")
+                .pattern("DDD    ")
+                .pattern("DDD    ")
+                .pattern("DDDDDD ")
+                .pattern(" DBCEDD")
+                .pattern("  DDDD ")
+                .define('A', Items.RECOVERY_COMPASS)
+                .define('B', Items.COMPASS)
+                .define('C', Items.BLAZE_POWDER)
+                .define('E', Items.ENDER_EYE)
+                .define('D', ModItems.neutron_ingot.get())
+                .unlockedBy("has_item", has(ModItems.neutron_ingot.get())).save(consumer);
+
         // Singularity Stew
         ModSingularityRecipeBuilder.shapeless(RecipeCategory.MISC)
                 .requires(ModItems.neutron_nugget)

@@ -1,8 +1,9 @@
 {
   "required": true,
-  "package": "committee.nova.avaritia_expand.init.mixin",
+  "package": "committee.nova.avaritia_expand.init.mixins",
   "compatibilityLevel": "JAVA_21",
-  "mixins": [],
+  "mixins": [
+  ],
   "injectors": {
     "defaultRequire": 1
   },

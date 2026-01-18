@@ -9,6 +9,7 @@ displayName = "${mod_name}"
 authors = "${mod_authors}"
 
 logoFile = "logo.png"
+displayURL ="https://www.curseforge.com/minecraft/mc-mods/avaritia-expand"
 
 description = '''${mod_description}'''
 

@@ -42,6 +42,9 @@ public class AEItems {
         public static DeferredItem<Item> neutron_hoe = ITEMS.register("neutron_hoe",
             ()-> new NeutronHoeItem(ModToolTiers.CRYSTAL,new Item.Properties()
                     .fireResistant().rarity(ModRarities.EPIC).stacksTo(1).attributes(createAttributes(ModToolTiers.CRYSTAL, 0, -3)).component(ModDataComponents.TOOL_MODE, ToolMode.DEFAULT)));
+        public static DeferredItem<Item> neutron_mobile = ITEMS.register("neutron_mobile",
+            ()-> new NeutronMobileItem(new Item.Properties()
+                    .fireResistant().rarity(ModRarities.EPIC).stacksTo(1)));
 
 
 

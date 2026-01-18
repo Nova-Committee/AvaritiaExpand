@@ -1,0 +1,35 @@
+{
+  "parent": "item/handheld",
+  "textures": {
+    "layer0": "avaritia_expand:item/tools/neutron_mobile/neutron_mobile",
+    "halo": "avaritia:misc/halo_noise"
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "avaritia:mode": 0
+      },
+      "model": "avaritia_expand:item/neutron_mobile_normal"
+    },
+
+    {
+      "predicate": {
+        "avaritia:mode": 1
+      },
+      "model": "avaritia_expand:item/neutron_mobile_nether"
+    },
+    {
+      "predicate": {
+        "avaritia:mode": 2
+      },
+      "model": "avaritia_expand:item/neutron_mobile_theend"
+    }
+  ],
+  "loader": "avaritia:halo",
+  "halo": {
+    "texture": "#halo",
+    "color": -1711276033,
+    "size": 6,
+    "pulse": false
+  }
+}
