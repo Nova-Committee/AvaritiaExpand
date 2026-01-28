@@ -16,8 +16,6 @@ import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.level.Explosion;
-import net.minecraft.world.level.ExplosionDamageCalculator;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
@@ -48,10 +46,8 @@ public class InfinityTntEntity extends Entity implements TraceableEntity {
     private static final float DAMAGE_PER_TICK = 10000.0f;
     private List<BlockPos> cachedExplosionBlocks;
 
-    // 新增：标记是否已播放爆炸开始音效，避免重复播放
     private boolean playedExplosionStartSound = false;
-    // 新增：爆炸过程中音效播放间隔（刻）
-    private static final int EXPLOSION_SOUND_INTERVAL = 5;
+
 
     @Nullable
     private LivingEntity owner;
@@ -121,7 +117,7 @@ public class InfinityTntEntity extends Entity implements TraceableEntity {
                 this.blockPosition().getZ() + currentRadius
         );
         List<Entity> entities = this.level().getEntities(this, aabb);
-        DamageSource damageSource = this.level().damageSources().source(ModDamageTypes.INFINITY);
+        DamageSource damageSource = ModDamageTypes.causeRandomDamage(this);
 
         for (Entity entity : entities) {
             if (entity instanceof LivingEntity livingEntity) {
@@ -245,7 +241,6 @@ public class InfinityTntEntity extends Entity implements TraceableEntity {
     protected void addAdditionalSaveData(CompoundTag tag) {
         tag.putShort("fuse", (short) this.getFuse());
         tag.put("block_state", NbtUtils.writeBlockState(this.getBlockState()));
-        // 保存音效播放状态，防止重加载后重复播放
         tag.putBoolean("played_explosion_start_sound", this.playedExplosionStartSound);
     }
 
