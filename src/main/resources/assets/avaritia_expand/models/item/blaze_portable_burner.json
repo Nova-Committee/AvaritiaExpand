@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "avaritia_expand:item/tools/blaze_portable_burner/layer_0"
+  }
+}

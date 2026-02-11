@@ -7,16 +7,15 @@ import committee.nova.avaritia_expand.common.item.armor.crystal.CrystalChestplat
 import committee.nova.avaritia_expand.common.item.armor.crystal.CrystalHelmetItem;
 import committee.nova.avaritia_expand.common.item.armor.crystal.CrystalLeggingsItem;
 import committee.nova.avaritia_expand.common.item.misc.InfinityBottleItem;
+import committee.nova.avaritia_expand.common.item.tool.blaze.BlazePortableBurnerItem;
 import committee.nova.avaritia_expand.common.item.tool.infinity.InfinityShearsItem;
 import committee.nova.avaritia_expand.common.item.tool.neutron.*;
 import committee.nova.mods.avaritia.init.registry.ModDataComponents;
 import committee.nova.mods.avaritia.init.registry.ModRarities;
 import committee.nova.mods.avaritia.init.registry.ModToolTiers;
 import committee.nova.mods.avaritia.init.registry.modes.ToolMode;
-import net.minecraft.core.component.DataComponents;
 import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.Tiers;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
@@ -80,6 +79,9 @@ public class AEItems {
             ()-> new Item(new Item.Properties().fireResistant().rarity(ModRarities.EPIC).stacksTo(16).food(AEFoods.star_dessert)));
     public static DeferredItem<Item> singularity_stew = ITEMS.register("singularity_stew",
             ()-> new Item(new Item.Properties().fireResistant().rarity(ModRarities.EPIC).stacksTo(16).food(AEFoods.singularity_stew)));
+
+    public static DeferredItem<Item> blaze_portable_burner = ITEMS.register("blaze_portable_burner",
+            ()-> new BlazePortableBurnerItem(new Item.Properties().fireResistant().rarity(ModRarities.UNCOMMON).stacksTo(1)));
 
     public static DeferredItem<Item> infinity_bottle= ITEMS.register("infinity_bottle",
             ()-> new InfinityBottleItem(new Item.Properties().fireResistant().rarity(ModRarities.COSMIC.getValue()).stacksTo(1)));

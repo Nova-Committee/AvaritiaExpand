@@ -4,6 +4,7 @@ import committee.nova.avaritia_expand.AvaritiaExpand;
 import committee.nova.avaritia_expand.client.screen.AEConfigScreen;
 import committee.nova.avaritia_expand.common.item.armor.crystal.CrystalArmorItem;
 import committee.nova.avaritia_expand.init.registry.AEEntities;
+import committee.nova.avaritia_expand.init.registry.AEMenus;
 import net.minecraft.client.model.ArmorStandModel;
 import net.minecraft.client.model.HumanoidModel;
 import net.minecraft.client.model.PlayerModel;
@@ -15,6 +16,7 @@ import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.ModList;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
+import net.neoforged.neoforge.client.event.RegisterMenuScreensEvent;
 import net.neoforged.neoforge.client.event.RenderLivingEvent;
 import net.neoforged.neoforge.client.gui.IConfigScreenFactory;
 
@@ -27,6 +29,12 @@ public class AEClient {
                 (container, last) -> new AEConfigScreen(last));
         AEEntities.onClientSetup();
     }
+
+    @SubscribeEvent
+    public static void onRegisterMenuScreens(RegisterMenuScreensEvent event) {
+        AEMenus.onClientSetup(event);
+    }
+
 
     /**
      * Adapted from <a href="https://github.com/mekanism/Mekanism">Mekanism</a>
