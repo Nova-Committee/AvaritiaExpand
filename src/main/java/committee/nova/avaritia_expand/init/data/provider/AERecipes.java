@@ -277,6 +277,23 @@ public class AERecipes extends RecipeProvider implements IConditionBuilder {
                 .define('D', ModItems.neutron_ingot.get())
                 .unlockedBy("has_item", has(ModItems.neutron_ingot.get())).save(consumer);
 
+
+        //Blaze PortableBurner
+
+        ModShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, AEItems.blaze_portable_burner.get(),2)
+                .pattern(" EEE ")
+                .pattern("E A E")
+                .pattern("EADAE")
+                .pattern("EBBBE")
+                .pattern(" CCC ")
+                .define('A', Items.BLAZE_POWDER)
+                .define('B', Items.NETHERRACK)
+                .define('C', Items.OBSIDIAN)
+                .define('E', Items.NETHER_BRICK)
+                .define('D', ModItems.blaze_cube.get())
+                .unlockedBy("has_item", has(ModItems.blaze_cube.get())).save(consumer);
+
+
         // Singularity Stew
         ModSingularityRecipeBuilder.shapeless(RecipeCategory.MISC)
                 .requires(ModItems.neutron_nugget)

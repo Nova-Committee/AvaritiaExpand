@@ -14,7 +14,7 @@ public class BurnerScreen extends BaseContainerScreen<BurnerMenu> {
     private static final ResourceLocation BACKGROUND = AvaritiaExpand.rl( "textures/gui/blaze_portable_burner_gui.png");
 
     public BurnerScreen(BurnerMenu pMenu, Inventory pPlayerInventory, Component pTitle) {
-        super(pMenu, pPlayerInventory, pTitle, BACKGROUND, 256, 256, 256, 256);
+        super(pMenu, pPlayerInventory, pTitle, BACKGROUND, 176, 206, 176, 206);
         this.inventoryLabelY = 112;
         this.titleLabelY = 99999;
     }

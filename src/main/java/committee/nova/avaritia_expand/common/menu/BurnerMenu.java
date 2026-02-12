@@ -1,5 +1,6 @@
 package committee.nova.avaritia_expand.common.menu;
 
+import committee.nova.avaritia_expand.init.registry.AEItems;
 import committee.nova.avaritia_expand.init.registry.AEMenus;
 import committee.nova.mods.avaritia.init.registry.ModMenus;
 import net.minecraft.network.RegistryFriendlyByteBuf;
@@ -41,7 +42,12 @@ public class BurnerMenu extends AbstractContainerMenu {
         for (int i = 0; i < 3; i++) {
             int x = SLOT_POSITIONS[i][0];
             int y = SLOT_POSITIONS[i][1];
-            addSlot(new Slot(container, i, x, y));
+            addSlot(new Slot(container, i, x, y) {
+                @Override
+                public boolean mayPlace(ItemStack stack) {
+                    return !stack.is(AEItems.blaze_portable_burner.get());
+                }
+            });
             cache[i] = new CachedRecipe();
         }
 
@@ -141,16 +147,24 @@ public class BurnerMenu extends AbstractContainerMenu {
         ItemStack stack = slot.getItem();
         ItemStack originalStack = stack.copy();
 
-        if (index < 3) {
-            if (!moveItemStackTo(stack, 3, slots.size(), true))
-                slot.set(originalStack);
-                return ItemStack.EMPTY;
-        } else {
-            if (!moveItemStackTo(stack, 0, 3, false))
-                slot.set(originalStack);
-                return ItemStack.EMPTY;
+        if (stack.is(AEItems.blaze_portable_burner.get())) {
+            return ItemStack.EMPTY;
         }
 
+        if (index < 3) {
+            if (!moveItemStackTo(stack, 3, slots.size(), true)) {
+                slot.set(originalStack);
+                return ItemStack.EMPTY;
+            }
+        } else {
+            if (!moveItemStackTo(stack, 0, 3, false)) {
+                slot.set(originalStack);
+                return ItemStack.EMPTY;
+            }
+        }
+
+        slot.setChanged();
+        return originalStack;
     }
 
     @Override
