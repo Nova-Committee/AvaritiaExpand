@@ -26,6 +26,7 @@ public class AECreativeModeTabs {
                 output.accept(AEItems.singularity_stew.get());
                 output.accept(AEItems.infinity_bottle.get());
                 output.accept(AEItems.infinity_shears.get());
+                output.accept(AEItems.blaze_portable_burner.get());
                 output.accept(AEItems.blaze_helmet.get());
                 output.accept(AEItems.blaze_chestplate.get());
                 output.accept(AEItems.blaze_leggings.get());
