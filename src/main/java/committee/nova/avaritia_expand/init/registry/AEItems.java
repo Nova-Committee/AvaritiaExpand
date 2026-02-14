@@ -24,7 +24,7 @@ import static net.minecraft.world.item.DiggerItem.createAttributes;
 
 
 public class AEItems {
-    public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(    AvaritiaExpand.MOD_ID);
+    public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(AvaritiaExpand.MOD_ID);
 
         public static DeferredItem<Item> neutron_sword = ITEMS.register("neutron_sword",
                 ()-> new NeutronSwordItem(ModToolTiers.CRYSTAL,new Item.Properties()

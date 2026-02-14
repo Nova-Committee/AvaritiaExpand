@@ -3,6 +3,7 @@
   "package": "committee.nova.avaritia_expand.init.mixins",
   "compatibilityLevel": "JAVA_21",
   "mixins": [
+    "MixinRangedAttribute"
   ],
   "injectors": {
     "defaultRequire": 1
