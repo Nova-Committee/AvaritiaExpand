@@ -2,7 +2,9 @@ package committee.nova.avaritia_expand.client;
 
 import committee.nova.avaritia_expand.AvaritiaExpand;
 import committee.nova.avaritia_expand.client.model.entity.ExtremeWitherModel;
+import committee.nova.avaritia_expand.client.model.entity.ExtremeWitherSkullModel;
 import committee.nova.avaritia_expand.client.model.geo.AEModelLayers;
+import committee.nova.avaritia_expand.client.render.entity.ExtremeWitherSkullRender;
 import committee.nova.avaritia_expand.client.screen.AEConfigScreen;
 import committee.nova.avaritia_expand.common.item.armor.crystal.CrystalArmorItem;
 import committee.nova.avaritia_expand.init.registry.AEEntities;
@@ -117,6 +119,10 @@ public class AEClient {
         event.registerLayerDefinition(
                 AEModelLayers.EXTREME_WITHER_ARMOR,
                 ExtremeWitherModel::createBodyLayer
+        );
+        event.registerLayerDefinition(
+                AEModelLayers.EXTREME_WITHER_SKULL,
+                ExtremeWitherSkullRender::createSkullLayer
         );
     }
 }

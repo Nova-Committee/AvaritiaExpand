@@ -2,8 +2,10 @@ package committee.nova.avaritia_expand.init.registry;
 
 import committee.nova.avaritia_expand.AvaritiaExpand;
 import committee.nova.avaritia_expand.client.render.entity.ExtremeWitherRender;
+import committee.nova.avaritia_expand.client.render.entity.ExtremeWitherSkullRender;
 import committee.nova.avaritia_expand.client.render.entity.InfinityTntRender;
 import committee.nova.avaritia_expand.common.entity.ExtremeWitherEntity;
+import committee.nova.avaritia_expand.common.entity.ExtremeWitherSkull;
 import committee.nova.avaritia_expand.common.entity.InfinityTntEntity;
 import committee.nova.avaritia_expand.common.entity.ThrownInfinityBottle;
 import net.minecraft.client.renderer.entity.EntityRenderers;
@@ -44,6 +46,13 @@ public class AEEntities {
                     .immuneTo(Blocks.WITHER_ROSE)
                     .build(AvaritiaExpand.rl("extreme_wither").toString()));
 
+    public static final DeferredHolder<EntityType<?>, EntityType<ExtremeWitherSkull>> EXTREME_WITHER_SKULL = ENTITIES.register("extreme_wither_skull",
+            () -> EntityType.Builder.<ExtremeWitherSkull>of(ExtremeWitherSkull::new, MobCategory.MISC)
+                    .sized(0.3125F, 0.3125F)
+                    .clientTrackingRange(4)
+                    .updateInterval(10)
+                    .fireImmune()
+                    .build(AvaritiaExpand.rl("extreme_wither_skull").toString()));
     public static void register(IEventBus bus){
         ENTITIES.register(bus);
     }
@@ -52,6 +61,8 @@ public class AEEntities {
     public static void onClientSetup() {
         EntityRenderers.register(AEEntities.INFINITY_TNT_ENTITY.get(), InfinityTntRender::new);
         EntityRenderers.register(AEEntities.EXTREME_WITHER.get(),ExtremeWitherRender::new);
+        EntityRenderers.register(AEEntities.EXTREME_WITHER_SKULL.get(), ExtremeWitherSkullRender::new);
+
     }
 
 }

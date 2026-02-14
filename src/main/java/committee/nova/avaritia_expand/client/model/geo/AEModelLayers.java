@@ -16,4 +16,10 @@ public class AEModelLayers {
                     AvaritiaExpand.rl("extreme_wither"),
                     "armor"
             );
+
+    public static final ModelLayerLocation EXTREME_WITHER_SKULL =
+            new ModelLayerLocation(
+                    AvaritiaExpand.rl("extreme_wither_skull"),
+                    "main"
+            );
 }
