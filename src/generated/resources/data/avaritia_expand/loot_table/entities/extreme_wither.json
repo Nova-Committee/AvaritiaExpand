@@ -1,0 +1,93 @@
+{
+  "type": "minecraft:entity",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "condition": "minecraft:killed_by_player"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "add": false,
+              "count": 5.0,
+              "function": "minecraft:set_count"
+            }
+          ],
+          "name": "avaritia_expand:star_dessert"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "condition": "minecraft:killed_by_player"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "add": false,
+              "count": 30.0,
+              "function": "minecraft:set_count"
+            }
+          ],
+          "name": "avaritia:crystal_matrix_ingot"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "condition": "minecraft:killed_by_player"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "add": false,
+              "count": 30.0,
+              "function": "minecraft:set_count"
+            }
+          ],
+          "name": "avaritia:neutron_ingot"
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "condition": "minecraft:killed_by_player"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "chance": 0.1,
+              "condition": "minecraft:random_chance"
+            }
+          ],
+          "name": "avaritia_expand:wither_totem"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "avaritia_expand:entities/extreme_wither"
+}

@@ -6,7 +6,9 @@ import committee.nova.avaritia_expand.common.item.armor.crystal.CrystalBootsItem
 import committee.nova.avaritia_expand.common.item.armor.crystal.CrystalChestplateItem;
 import committee.nova.avaritia_expand.common.item.armor.crystal.CrystalHelmetItem;
 import committee.nova.avaritia_expand.common.item.armor.crystal.CrystalLeggingsItem;
-import committee.nova.avaritia_expand.common.item.misc.InfinityBottleItem;
+import committee.nova.avaritia_expand.common.item.misc.WitherStarItem;
+import committee.nova.avaritia_expand.common.item.misc.WitherTotemItem;
+import committee.nova.avaritia_expand.common.item.tool.infinity.InfinityBottleItem;
 import committee.nova.avaritia_expand.common.item.tool.blaze.BlazePortableBurnerItem;
 import committee.nova.avaritia_expand.common.item.tool.infinity.InfinityShearsItem;
 import committee.nova.avaritia_expand.common.item.tool.neutron.*;
@@ -16,6 +18,7 @@ import committee.nova.mods.avaritia.init.registry.ModToolTiers;
 import committee.nova.mods.avaritia.init.registry.modes.ToolMode;
 import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Rarity;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
@@ -83,12 +86,15 @@ public class AEItems {
     public static DeferredItem<Item> blaze_portable_burner = ITEMS.register("blaze_portable_burner",
             ()-> new BlazePortableBurnerItem(new Item.Properties().fireResistant().rarity(ModRarities.UNCOMMON).stacksTo(1)));
 
-    public static DeferredItem<Item> infinity_bottle= ITEMS.register("infinity_bottle",
+    public static DeferredItem<Item> infinity_bottle = ITEMS.register("infinity_bottle",
             ()-> new InfinityBottleItem(new Item.Properties().fireResistant().rarity(ModRarities.COSMIC.getValue()).stacksTo(1)));
-    public static DeferredItem<Item> infinity_shears= ITEMS.register("infinity_shears",
+    public static DeferredItem<Item> infinity_shears = ITEMS.register("infinity_shears",
             ()-> new InfinityShearsItem(new Item.Properties().fireResistant().rarity(ModRarities.COSMIC.getValue()).stacksTo(1)));
 
-
+    public static DeferredItem<Item> wither_star = ITEMS.register("wither_star",
+            ()-> new WitherStarItem(new Item.Properties().fireResistant().rarity(Rarity.UNCOMMON).stacksTo(1)));
+    public static DeferredItem<Item> wither_totem = ITEMS.register("wither_totem",
+            ()-> new WitherTotemItem(new Item.Properties().fireResistant().rarity(ModRarities.LEGEND.getValue()).stacksTo(1)));
 
 
     public static void register(IEventBus bus){

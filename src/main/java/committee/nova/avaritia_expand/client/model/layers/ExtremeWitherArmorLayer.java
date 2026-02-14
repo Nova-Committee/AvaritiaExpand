@@ -1,5 +1,6 @@
 package committee.nova.avaritia_expand.client.model.layers;
 
+import committee.nova.avaritia_expand.AvaritiaExpand;
 import committee.nova.avaritia_expand.client.model.entity.ExtremeWitherModel;
 import committee.nova.avaritia_expand.client.model.geo.AEModelLayers;
 import committee.nova.avaritia_expand.common.entity.ExtremeWitherEntity;
@@ -12,7 +13,7 @@ import net.minecraft.util.Mth;
 
 public class ExtremeWitherArmorLayer extends EnergySwirlLayer<ExtremeWitherEntity, ExtremeWitherModel<ExtremeWitherEntity>> {
 
-    private static final ResourceLocation WITHER_ARMOR_LOCATION = ResourceLocation.withDefaultNamespace("textures/entity/wither/wither_armor.png");
+    private static final ResourceLocation WITHER_ARMOR_LOCATION = AvaritiaExpand.rl("textures/entity/extreme_wither/extreme_wither_armor.png");
     private final ExtremeWitherModel<ExtremeWitherEntity> model;
 
     public ExtremeWitherArmorLayer(RenderLayerParent<ExtremeWitherEntity, ExtremeWitherModel<ExtremeWitherEntity>> renderer, EntityModelSet modelSet) {

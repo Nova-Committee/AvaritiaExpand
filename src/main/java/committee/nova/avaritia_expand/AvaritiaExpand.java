@@ -3,9 +3,12 @@ package committee.nova.avaritia_expand;
 
 import committee.nova.avaritia_expand.init.registry.*;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.neoforged.bus.api.IEventBus;
+import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.common.Mod;
+import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 
 
 @Mod(AvaritiaExpand.MOD_ID)
@@ -25,6 +28,5 @@ public class AvaritiaExpand {
         AEBlockEntities.register(bus);
         AERecipeSerializers.SERIALIZERS.register(bus);
     }
-
 
 }

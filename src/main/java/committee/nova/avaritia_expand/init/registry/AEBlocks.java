@@ -26,8 +26,6 @@ public class AEBlocks {
     public static DeferredBlock<Block> jeb_carpet = itemBlock("jeb_carpet", () -> new JebCarpetBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_CARPET)));
     public static DeferredBlock<Block> neutron_decompose = itemBlock("neutron_decompose", () -> new NeutronDecomposeBlock(BlockBehaviour.Properties.of().strength(50F,2000F)),ModRarities.RARE);
 
-
-
     private static <T extends Block> DeferredBlock<T> itemBlock(String name, Supplier<T> block){
         DeferredBlock<T> toReturn = BLOCKS.register(name, block);
         itemBlock(name, toReturn);

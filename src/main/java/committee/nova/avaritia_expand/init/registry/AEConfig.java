@@ -52,4 +52,8 @@ public class AEConfig {
     private static ModConfigSpec.LongValue buildLong(ModConfigSpec.Builder builder, String name, long defaultValue, long min, long max, String comment) {
         return builder.comment(comment).translation(name).defineInRange(name, defaultValue, min, max);
     }
+
+    public static void save() {
+        COMMON.save();
+    }
 }

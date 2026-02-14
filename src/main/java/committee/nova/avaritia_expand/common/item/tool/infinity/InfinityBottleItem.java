@@ -1,4 +1,4 @@
-package committee.nova.avaritia_expand.common.item.misc;
+package committee.nova.avaritia_expand.common.item.tool.infinity;
 
 import committee.nova.avaritia_expand.common.entity.ThrownInfinityBottle;
 import net.minecraft.core.Direction;

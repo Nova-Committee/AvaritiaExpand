@@ -293,6 +293,18 @@ public class AERecipes extends RecipeProvider implements IConditionBuilder {
                 .define('D', ModItems.blaze_cube.get())
                 .unlockedBy("has_item", has(ModItems.blaze_cube.get())).save(consumer);
 
+        // Wither Star
+
+        ModShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, AEItems.wither_star.get(),2)
+                .pattern("  D  ")
+                .pattern(" DCD ")
+                .pattern("DEEED")
+                .pattern(" DED ")
+                .pattern("  D  ")
+                .define('C', ModBlocks.blaze_cube_block)
+                .define('E', ModBlocks.neutron)
+                .define('D', ModItems.crystal_matrix_ingot.get())
+                .unlockedBy("has_item", has(ModItems.neutron_ingot.get())).save(consumer);
 
         // Singularity Stew
         ModSingularityRecipeBuilder.shapeless(RecipeCategory.MISC)

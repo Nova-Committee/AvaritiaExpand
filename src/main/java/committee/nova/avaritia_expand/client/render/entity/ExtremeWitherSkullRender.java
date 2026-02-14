@@ -2,6 +2,7 @@ package committee.nova.avaritia_expand.client.render.entity;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
+import committee.nova.avaritia_expand.AvaritiaExpand;
 import committee.nova.avaritia_expand.client.model.entity.ExtremeWitherSkullModel;
 import committee.nova.avaritia_expand.client.model.geo.AEModelLayers;
 import committee.nova.avaritia_expand.common.entity.ExtremeWitherSkull;
@@ -19,8 +20,8 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.Mth;
 
 public class ExtremeWitherSkullRender extends EntityRenderer<ExtremeWitherSkull> {
-    private static final ResourceLocation WITHER_INVULNERABLE_LOCATION = ResourceLocation.withDefaultNamespace("textures/entity/wither/wither_invulnerable.png");
-    private static final ResourceLocation WITHER_LOCATION = ResourceLocation.withDefaultNamespace("textures/entity/wither/wither.png");
+    private static final ResourceLocation WITHER_INVULNERABLE_LOCATION = AvaritiaExpand.rl("textures/entity/extreme_wither/wither_sprite.png");
+    private static final ResourceLocation WITHER_LOCATION = AvaritiaExpand.rl("textures/entity/extreme_wither/extreme_wither.png");
     private final ExtremeWitherSkullModel model;
 
 

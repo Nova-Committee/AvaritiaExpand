@@ -65,54 +65,62 @@ public class AEConfigScreen extends Screen {
                 Component.translatable("config.avaritia_expand.neutron_sword_max_range.tooltip"),
                 AEConfig.neutronSwordMaxRange::set, AEConfig.neutronSwordMaxRange);
     }
-
+    private void resetToDefaults() {
+        AEConfig.infinityTntMaxRange.set(AEConfig.infinityTntMaxRange.getDefault());
+        AEConfig.infinityTntMaxExplosionTime.set(AEConfig.infinityTntMaxExplosionTime.getDefault());
+        AEConfig.neutronSwordMaxRange.set(AEConfig.neutronSwordMaxRange.getDefault());
+    }
     private void addBooleanEntry(String titleKey, ModConfigSpec.BooleanValue configValue,
                                  Component description, Consumer<Boolean> onValueChange, Supplier<Boolean> valueSupplier) {
         configEntries.add(new BooleanConfigEntry(
-                Component.translatable("config.avaritia_expand." + titleKey),
+                Component.translatable("config.avaritia." + titleKey),
                 description,
                 configValue.get(),
                 onValueChange,
-                valueSupplier
+                valueSupplier,
+                configValue
         ));
     }
 
     private void addIntEntry(String titleKey, ModConfigSpec.IntValue configValue, int min, int max,
                              Component description, Consumer<Integer> onValueChange, Supplier<Integer> valueSupplier) {
         configEntries.add(new IntConfigEntry(
-                Component.translatable("config.avaritia_expand." + titleKey),
+                Component.translatable("config.avaritia." + titleKey),
                 description,
                 configValue.get(),
                 min,
                 max,
                 onValueChange,
-                valueSupplier
+                valueSupplier,
+                configValue
         ));
     }
 
     private void addDoubleEntry(String titleKey, ModConfigSpec.DoubleValue configValue, double min, double max,
                                 Component description, Consumer<Double> onValueChange, Supplier<Double> valueSupplier) {
         configEntries.add(new DoubleConfigEntry(
-                Component.translatable("config.avaritia_expand." + titleKey),
+                Component.translatable("config.avaritia." + titleKey),
                 description,
                 configValue.get(),
                 min,
                 max,
                 onValueChange,
-                valueSupplier
+                valueSupplier,
+                configValue
         ));
     }
 
     private void addLongEntry(String titleKey, ModConfigSpec.LongValue configValue, long min, long max,
                               Component description, Consumer<Long> onValueChange, Supplier<Long> valueSupplier) {
         configEntries.add(new LongConfigEntry(
-                Component.translatable("config.avaritia_expand." + titleKey),
+                Component.translatable("config.avaritia." + titleKey),
                 description,
                 configValue.get(),
                 min,
                 max,
                 onValueChange,
-                valueSupplier
+                valueSupplier,
+                configValue
         ));
     }
 
@@ -132,12 +140,16 @@ public class AEConfigScreen extends Screen {
                 btn -> {
                     resetToDefaults();
                     updateWidgetValues();
+                    AEConfig.save();
                 }
         ).bounds(width / 2 - 102, height - 30, 100, 20).build());
 
         backButton = addRenderableWidget(Button.builder(
                 Component.translatable("gui.back"),
-                btn -> minecraft.setScreen(parent)
+                btn -> {
+                    AEConfig.save();
+                    minecraft.setScreen(parent);
+                }
         ).bounds(width / 2 + 2, height - 30, 100, 20).build());
 
         for (int i = 0; i < configEntries.size(); i++) {
@@ -150,14 +162,6 @@ public class AEConfigScreen extends Screen {
         }
     }
 
-
-    private void resetToDefaults() {
-        // Blocks 配置项
-        AEConfig.infinityTntMaxExplosionTime.set(AEConfig.infinityTntMaxExplosionTime.getDefault());
-        AEConfig.infinityTntMaxRange.set(AEConfig.infinityTntMaxRange.getDefault());
-        // Tools 配置项
-        AEConfig.neutronSwordMaxRange.set(AEConfig.neutronSwordMaxRange.getDefault());
-    }
 
     private void updateWidgetValues() {
         for (ConfigEntry<?> entry : configEntries) {
@@ -285,6 +289,7 @@ public class AEConfigScreen extends Screen {
 
     @Override
     public void onClose() {
+        AEConfig.save();
         minecraft.setScreen(parent);
     }
 
@@ -294,16 +299,19 @@ public class AEConfigScreen extends Screen {
         T currentValue;
         final Consumer<T> onValueChange;
         final Supplier<T> valueSupplier;
+        final ModConfigSpec.ConfigValue<T> configValue;
 
-        ConfigEntry(Component title, Component description, T initialValue, Consumer<T> onValueChange, Supplier<T> valueSupplier) {
+        ConfigEntry(Component title, Component description, T initialValue, Consumer<T> onValueChange, Supplier<T> valueSupplier,
+                    ModConfigSpec.ConfigValue<T> configValue) {
             this.title = title;
             this.description = description;
             this.currentValue = initialValue;
             this.onValueChange = onValueChange;
             this.valueSupplier = valueSupplier;
+            this.configValue = configValue;
         }
 
-        abstract void initWidgets(AEConfigScreen  screen, int x, int y, int width);
+        abstract void initWidgets(AEConfigScreen screen, int x, int y, int width);
 
         abstract void render(GuiGraphics gui, int mouseX, int mouseY, int x, int y, int width, int height, Font font);
 
@@ -314,16 +322,20 @@ public class AEConfigScreen extends Screen {
             if (this.onValueChange != null) {
                 this.onValueChange.accept(newValue);
             }
+            if (this.configValue != null) {
+                this.configValue.set(newValue);
+                AEConfig.save();
+            }
         }
     }
 
     private static class CategoryHeaderEntry extends ConfigEntry<Void> {
         CategoryHeaderEntry(Component title) {
-            super(title, Component.empty(), null, null, null);
+            super(title, Component.empty(), null, null, null, null);
         }
 
         @Override
-        void initWidgets(AEConfigScreen  screen, int x, int y, int width) {
+        void initWidgets(AEConfigScreen screen, int x, int y, int width) {
         }
 
         @Override
@@ -340,12 +352,12 @@ public class AEConfigScreen extends Screen {
     private static class BooleanConfigEntry extends ConfigEntry<Boolean> {
         private Button checkBox;
 
-        BooleanConfigEntry(Component title, Component description, Boolean initialValue, Consumer<Boolean> onValueChange, Supplier<Boolean> valueSupplier) {
-            super(title, description, initialValue, onValueChange, valueSupplier);
+        BooleanConfigEntry(Component title, Component description, Boolean initialValue, Consumer<Boolean> onValueChange, Supplier<Boolean> valueSupplier,ModConfigSpec.ConfigValue<Boolean> configValue) {
+            super(title, description, initialValue, onValueChange, valueSupplier, configValue);
         }
 
         @Override
-        void initWidgets(AEConfigScreen  screen, int x, int y, int width) {
+        void initWidgets(AEConfigScreen screen, int x, int y, int width) {
             checkBox = Button.builder(
                     getButtonText(),
                     btn -> {
@@ -389,14 +401,14 @@ public class AEConfigScreen extends Screen {
         private final int max;
 
         IntConfigEntry(Component title, Component description, Integer initialValue,
-                       int min, int max, Consumer<Integer> onValueChange, Supplier<Integer> valueSupplier) {
-            super(title, description, initialValue, onValueChange, valueSupplier);
+                       int min, int max, Consumer<Integer> onValueChange, Supplier<Integer> valueSupplier,ModConfigSpec.ConfigValue<Integer> configValue) {
+            super(title, description, initialValue, onValueChange, valueSupplier, configValue);
             this.min = min;
             this.max = max;
         }
 
         @Override
-        void initWidgets(AEConfigScreen  screen, int x, int y, int width) {
+        void initWidgets(AEConfigScreen screen, int x, int y, int width) {
             editBox = new RangedEditBox(screen.font, x + width - 100, y + 10, 100, 20, Component.empty(), min, max, true);
             editBox.setMaxLength(10);
             editBox.setValue(String.valueOf(currentValue));
@@ -445,14 +457,14 @@ public class AEConfigScreen extends Screen {
         private final double max;
 
         DoubleConfigEntry(Component title, Component description, Double initialValue,
-                          double min, double max, Consumer<Double> onValueChange, Supplier<Double> valueSupplier) {
-            super(title, description, initialValue, onValueChange, valueSupplier);
+                          double min, double max, Consumer<Double> onValueChange, Supplier<Double> valueSupplier,ModConfigSpec.ConfigValue<Double> configValue) {
+            super(title, description, initialValue, onValueChange, valueSupplier,configValue);
             this.min = min;
             this.max = max;
         }
 
         @Override
-        void initWidgets(AEConfigScreen  screen, int x, int y, int width) {
+        void initWidgets(AEConfigScreen screen, int x, int y, int width) {
             editBox = new RangedEditBox(screen.font, x + width - 100, y + 10, 100, 20, Component.empty(), min, max, false);
             editBox.setMaxLength(10);
             editBox.setValue(String.valueOf(currentValue));
@@ -501,14 +513,14 @@ public class AEConfigScreen extends Screen {
         private final long max;
 
         LongConfigEntry(Component title, Component description, Long initialValue,
-                        long min, long max, Consumer<Long> onValueChange, Supplier<Long> valueSupplier) {
-            super(title, description, initialValue, onValueChange, valueSupplier);
+                        long min, long max, Consumer<Long> onValueChange, Supplier<Long> valueSupplier,ModConfigSpec.ConfigValue<Long> configValue) {
+            super(title, description, initialValue, onValueChange, valueSupplier,configValue);
             this.min = min;
             this.max = max;
         }
 
         @Override
-        void initWidgets(AEConfigScreen  screen, int x, int y, int width) {
+        void initWidgets(AEConfigScreen screen, int x, int y, int width) {
             editBox = new RangedEditBox(screen.font, x + width - 100, y + 10, 100, 20, Component.empty(), min, max, false);
             editBox.setMaxLength(15);
             editBox.setValue(String.valueOf(currentValue));

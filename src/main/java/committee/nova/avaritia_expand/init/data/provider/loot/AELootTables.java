@@ -19,7 +19,8 @@ public class AELootTables extends LootTableProvider {
     @Override
     public @NotNull List<SubProviderEntry> getTables() {
         return ImmutableList.of(
-                new SubProviderEntry(AEBlockLootTables::new, LootContextParamSets.BLOCK)
+                new SubProviderEntry(AEBlockLootTables::new, LootContextParamSets.BLOCK),
+                new SubProviderEntry(AEEntityLootTables::new, LootContextParamSets.ENTITY)
         );
     }
 }

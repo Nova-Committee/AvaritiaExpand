@@ -20,6 +20,8 @@
   "item.avaritia_expand.infinity_bottle": "无尽瓶",
   "item.avaritia_expand.infinity_shears": "无尽剪刀",
   "item.avaritia_expand.blaze_portable_burner": "炽骨立方随身烧",
+  "item.avaritia_expand.wither_star": "凋零之星",
+  "item.avaritia_expand.wither_totem": "凋零傀儡",
   "block.avaritia_expand.infinity_tnt_block": "无尽TNT",
   "block.avaritia_expand.jeb_wool": "开发者羊毛",
   "block.avaritia_expand.jeb_carpet": "开发者地毯",
@@ -30,6 +32,7 @@
   "tooltip.avaritia.tool.neutron_mobile_theend": "末地",
   "tooltip.avaritia_expand.infinity_shears.desc": "你的意思是你真的做了?随你便吧",
   "tooltip.avaritia_expand.infinity_tnt_block.desc": "§8§o只需一点点...",
+  "tooltip.avaritia_expand.wither_star.desc": "这将召唤一个强力的敌人",
   "entity.avaritia_expand.infinity_tnt_entity":"无尽TNT",
   "title.avaritia_expand.config.title": "无尽贪婪：拓展",
   "config.avaritia_expand.category.blocks": "方块",
@@ -41,5 +44,7 @@
   "config.avaritia_expand.infinity_tnt_max_range.tooltip": "无尽TNT的最大爆炸范围",
   "config.avaritia_expand.neutron_sword_max_range.tooltip": "中子剑的最大传送距离",
   "advancements.avaritia_expand.infinity_shears.desc": "Never gonna give you up",
-  "advancements.avaritia_expand.infinity_shears.title": "你被整了"
+  "advancements.avaritia_expand.infinity_shears.title": "你被整了",
+  "entity.avaritia_expand.extreme_wither": "超限凋零",
+  "entity.avaritia_expand.extreme_wither_skull": "超限凋零头颅"
 }

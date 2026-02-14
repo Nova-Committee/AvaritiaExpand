@@ -1,6 +1,7 @@
 package committee.nova.avaritia_expand.init.data;
 
 import committee.nova.avaritia_expand.init.data.provider.AEBlockTags;
+import committee.nova.avaritia_expand.init.data.provider.AEItemTags;
 import committee.nova.avaritia_expand.init.data.provider.AERecipes;
 import committee.nova.avaritia_expand.init.data.provider.loot.AELootTables;
 import net.minecraft.core.HolderLookup;
@@ -27,6 +28,7 @@ public class AEDataGen {
         if (event.includeServer()) {
             generator.addProvider(true, new AERecipes(output, lookupProvider));
             generator.addProvider(true, new AELootTables(output, lookupProvider));
+            generator.addProvider(true, new AEItemTags(output, lookupProvider, helper));
             generator.addProvider(true, new AEBlockTags(output, lookupProvider, helper));
         }
     }

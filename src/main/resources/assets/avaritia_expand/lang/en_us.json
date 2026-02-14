@@ -20,6 +20,8 @@
   "item.avaritia_expand.infinity_bottle": "Infinity Bottle",
   "item.avaritia_expand.infinity_shears": "Infinity Shears",
   "item.avaritia_expand.blaze_portable_burner": "Blaze Portable Burner",
+  "item.avaritia_expand.wither_star": "Wither Star",
+  "item.avaritia_expand.wither_totem": "Wither Totem",
   "block.avaritia_expand.infinity_tnt_block": "Infinity TNT",
   "block.avaritia_expand.jeb_wool": "Jeb_ Wool",
   "block.avaritia_expand.jeb_carpet": "Jeb_ Carpet",
@@ -30,6 +32,7 @@
   "tooltip.avaritia.tool.neutron_mobile_theend": "The End",
   "tooltip.avaritia_expand.infinity_shears.desc": "You mean you really craft it? Suit yourself.",
   "tooltip.avaritia_expand.infinity_tnt_block.desc": "§8§oJust a little...",
+  "tooltip.avaritia_expand.wither_star.desc": "This will summon a powerful enemy",
   "entity.avaritia_expand.infinity_tnt_entity":"Infinity TNT",
   "title.avaritia_expand.config.title": "Avaritia:Expand",
   "config.avaritia_expand.category.blocks": "Blocks",
@@ -41,5 +44,7 @@
   "config.avaritia_expand.infinity_tnt_max_range.tooltip": "The maximum range of the Infinity TNT",
   "config.avaritia_expand.neutron_sword_max_range.tooltip": "The maximum teleportation distance of the Neutronium Sword",
   "advancements.avaritia_expand.infinity_shears.desc": "Never gonna give you up",
-  "advancements.avaritia_expand.infinity_shears.title": "You got tricked"
+  "advancements.avaritia_expand.infinity_shears.title": "You got tricked",
+  "entity.avaritia_expand.extreme_wither": "Extreme Wither",
+  "entity.avaritia_expand.extreme_wither_skull": "Extreme Wither Skull"
 }

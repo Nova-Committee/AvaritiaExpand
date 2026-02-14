@@ -1,6 +1,7 @@
 package committee.nova.avaritia_expand.init.handler;
 
 import committee.nova.avaritia_expand.AvaritiaExpand;
+import committee.nova.avaritia_expand.common.entity.ExtremeWitherSkull;
 import committee.nova.avaritia_expand.common.item.armor.blaze.*;
 import committee.nova.avaritia_expand.common.item.armor.crystal.CrystalBootsItem;
 import committee.nova.avaritia_expand.common.item.armor.crystal.CrystalChestplateItem;
@@ -295,11 +296,11 @@ public class AEAbilityHandler {
 
             if (event.getSource().getDirectEntity() instanceof Projectile projectile) {
 
-                Vec3 motion = projectile.getDeltaMovement();
-                projectile.setDeltaMovement(motion.scale(-1.0));
-                projectile.setOwner(player);
-
-                event.setCanceled(true);
+                if (projectile instanceof ExtremeWitherSkull) {
+                    return;
+                } else {
+                    event.setCanceled(true);
+                }
             }
         }
     }
