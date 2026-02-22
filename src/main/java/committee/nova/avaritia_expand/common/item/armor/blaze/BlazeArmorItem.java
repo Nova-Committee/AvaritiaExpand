@@ -34,6 +34,7 @@ public class BlazeArmorItem extends ArmorItem implements GeoItem {
         return false;
     }
 
+
     @Override
     public void createGeoRenderer(Consumer<GeoRenderProvider> consumer) {
         consumer.accept(new GeoRenderProvider() {

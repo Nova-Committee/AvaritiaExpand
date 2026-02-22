@@ -277,6 +277,19 @@ public class AERecipes extends RecipeProvider implements IConditionBuilder {
                 .define('D', ModItems.neutron_ingot.get())
                 .unlockedBy("has_item", has(ModItems.neutron_ingot.get())).save(consumer);
 
+        ModShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, AEItems.neutron_mace.get(),3)
+                .pattern("    D  ")
+                .pattern("   DBD ")
+                .pattern("  DBABD")
+                .pattern("   DBD ")
+                .pattern("  D D  ")
+                .pattern(" D     ")
+                .pattern("D      ")
+                .define('A', Items.HEAVY_CORE)
+                .define('B', ModBlocks.neutron)
+                .define('D', ModItems.neutron_ingot.get())
+                .unlockedBy("has_item", has(ModItems.neutron_ingot.get())).save(consumer);
+
 
         //Blaze PortableBurner
 
@@ -290,6 +303,18 @@ public class AERecipes extends RecipeProvider implements IConditionBuilder {
                 .define('B', Items.NETHERRACK)
                 .define('C', Items.OBSIDIAN)
                 .define('E', Items.NETHER_BRICK)
+                .define('D', ModItems.blaze_cube.get())
+                .unlockedBy("has_item", has(ModItems.blaze_cube.get())).save(consumer);
+
+        //Blaze WindCharge
+
+        ModShapedRecipeBuilder.shaped(RecipeCategory.MISC, AEItems.blaze_wind_charge.get(),2)
+                .pattern("     ")
+                .pattern(" AAA ")
+                .pattern("AADAA")
+                .pattern(" AAA ")
+                .pattern("     ")
+                .define('A', Items.WIND_CHARGE)
                 .define('D', ModItems.blaze_cube.get())
                 .unlockedBy("has_item", has(ModItems.blaze_cube.get())).save(consumer);
 

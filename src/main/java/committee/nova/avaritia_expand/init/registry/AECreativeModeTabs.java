@@ -21,12 +21,14 @@ public class AECreativeModeTabs {
                 output.accept(AEItems.neutron_pickaxe.get());
                 output.accept(AEItems.neutron_shovel.get());
                 output.accept(AEItems.neutron_hoe.get());
+                output.accept(AEItems.neutron_mace.get());
                 output.accept(AEItems.neutron_mobile.get());
                 output.accept(AEItems.star_dessert.get());
                 output.accept(AEItems.singularity_stew.get());
                 output.accept(AEItems.infinity_bottle.get());
                 output.accept(AEItems.infinity_shears.get());
                 output.accept(AEItems.blaze_portable_burner.get());
+                output.accept(AEItems.blaze_wind_charge.get());
                 output.accept(AEItems.wither_totem.get());
                 output.accept(AEItems.wither_star.get());
                 output.accept(AEItems.blaze_helmet.get());

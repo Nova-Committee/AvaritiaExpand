@@ -27,7 +27,6 @@ public class AEArmorMaterials {
                     attribute.put(ArmorItem.Type.CHESTPLATE, 32);
                     attribute.put(ArmorItem.Type.HELMET, 30);
 
-
                     }),25,3f,0.1f,()-> ModItems.blaze_cube.get());
     public static final Holder<ArmorMaterial> CRYSTAL = register(
             "crystal", Util.make(
@@ -37,8 +36,7 @@ public class AEArmorMaterials {
                         attribute.put(ArmorItem.Type.CHESTPLATE, 58);
                         attribute.put(ArmorItem.Type.HELMET, 56);
 
-
-                    }),25,5f,0.5f,()-> ModItems.blaze_cube.get());
+                    }),25,5f,0.5f,()-> ModItems.crystal_matrix_ingot.get());
 
     private static Holder<ArmorMaterial> register(String name, EnumMap<ArmorItem.Type, Integer> typeProtection,
                                                   int enchantability, float toughness, float knockbackResistance,

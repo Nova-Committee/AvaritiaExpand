@@ -1,13 +1,11 @@
 package committee.nova.avaritia_expand.init.registry;
 
 import committee.nova.avaritia_expand.AvaritiaExpand;
+import committee.nova.avaritia_expand.client.render.entity.BlazeWindChargeRender;
 import committee.nova.avaritia_expand.client.render.entity.ExtremeWitherRender;
 import committee.nova.avaritia_expand.client.render.entity.ExtremeWitherSkullRender;
 import committee.nova.avaritia_expand.client.render.entity.InfinityTntRender;
-import committee.nova.avaritia_expand.common.entity.ExtremeWitherEntity;
-import committee.nova.avaritia_expand.common.entity.ExtremeWitherSkull;
-import committee.nova.avaritia_expand.common.entity.InfinityTntEntity;
-import committee.nova.avaritia_expand.common.entity.ThrownInfinityBottle;
+import committee.nova.avaritia_expand.common.entity.*;
 import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.entity.EntityType;
@@ -53,6 +51,18 @@ public class AEEntities {
                     .updateInterval(10)
                     .fireImmune()
                     .build(AvaritiaExpand.rl("extreme_wither_skull").toString()));
+
+    public static final DeferredHolder<EntityType<?>, EntityType<BlazeWindCharge>> BLAZE_WIND_CHARGE = ENTITIES.register("blaze_wind_charge",
+            () -> EntityType.Builder.<BlazeWindCharge>of(BlazeWindCharge::new, MobCategory.MISC)
+                    .fireImmune()
+                    .sized(0.3125F, 0.3125F)
+                    .eyeHeight(0.0F)
+                    .clientTrackingRange(4)
+                    .updateInterval(10)
+                    .build(AvaritiaExpand.rl("blaze_wind_charge").toString()));
+
+
+
     public static void register(IEventBus bus){
         ENTITIES.register(bus);
     }
@@ -62,6 +72,7 @@ public class AEEntities {
         EntityRenderers.register(AEEntities.INFINITY_TNT_ENTITY.get(), InfinityTntRender::new);
         EntityRenderers.register(AEEntities.EXTREME_WITHER.get(),ExtremeWitherRender::new);
         EntityRenderers.register(AEEntities.EXTREME_WITHER_SKULL.get(), ExtremeWitherSkullRender::new);
+        EntityRenderers.register(AEEntities.BLAZE_WIND_CHARGE.get(), BlazeWindChargeRender::new);
 
     }
 
