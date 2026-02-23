@@ -1,6 +1,6 @@
-package committee.nova.avaritia_expand.common.item.tool.blaze;
+package committee.nova.avaritia_expand.common.item.tool.crystal;
 
-import committee.nova.avaritia_expand.common.entity.BlazeWindCharge;
+import committee.nova.avaritia_expand.common.entity.CrystalWindCharge;
 import net.minecraft.core.Direction;
 import net.minecraft.core.Position;
 import net.minecraft.sounds.SoundEvents;
@@ -18,10 +18,10 @@ import net.minecraft.world.item.ProjectileItem;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.Vec3;
 
-public class BlazeWindChargeItem extends Item implements ProjectileItem {
+public class CrystalWindChargeItem extends Item implements ProjectileItem {
     private static final int COOLDOWN = 10;
 
-    public BlazeWindChargeItem(Properties properties) {
+    public CrystalWindChargeItem(Properties properties) {
         super(properties);
     }
 
@@ -30,9 +30,9 @@ public class BlazeWindChargeItem extends Item implements ProjectileItem {
         ItemStack itemstack = player.getItemInHand(hand);
 
         if (!level.isClientSide()) {
-            BlazeWindCharge blazeWindCharge = new BlazeWindCharge(player, level, player.position().x(), player.getEyePosition().y(), player.position().z());
-            blazeWindCharge.shootFromRotation(player, player.getXRot(), player.getYRot(), 0.0F, 1.5F, 1.0F);
-            level.addFreshEntity(blazeWindCharge);
+            CrystalWindCharge crystalWindCharge = new CrystalWindCharge(player, level, player.position().x(), player.getEyePosition().y(), player.position().z());
+            crystalWindCharge.shootFromRotation(player, player.getXRot(), player.getYRot(), 0.0F, 1.5F, 1.0F);
+            level.addFreshEntity(crystalWindCharge);
         }
 
         level.playSound(
@@ -60,9 +60,9 @@ public class BlazeWindChargeItem extends Item implements ProjectileItem {
         double d1 = randomsource.triangle((double)direction.getStepY(), 0.11485000000000001);
         double d2 = randomsource.triangle((double)direction.getStepZ(), 0.11485000000000001);
         Vec3 vec3 = new Vec3(d0, d1, d2);
-        BlazeWindCharge blazeWindCharge = new BlazeWindCharge(level, pos.x(), pos.y(), pos.z(), vec3);
-        blazeWindCharge.setDeltaMovement(vec3);
-        return blazeWindCharge;
+        CrystalWindCharge crystalWindCharge = new CrystalWindCharge(level, pos.x(), pos.y(), pos.z(), vec3);
+        crystalWindCharge.setDeltaMovement(vec3);
+        return crystalWindCharge;
     }
 
     @Override
@@ -71,8 +71,8 @@ public class BlazeWindChargeItem extends Item implements ProjectileItem {
     }
 
     @Override
-    public ProjectileItem.DispenseConfig createDispenseConfig() {
-        return ProjectileItem.DispenseConfig.builder()
+    public DispenseConfig createDispenseConfig() {
+        return DispenseConfig.builder()
                 .positionFunction((source, stack) -> source.center())
                 .uncertainty(6.6666665F)
                 .power(1.0F)

@@ -2,14 +2,20 @@ package committee.nova.avaritia_expand.common.item.tool.infinity;
 
 import committee.nova.avaritia_expand.init.registry.AEBlocks;
 import committee.nova.mods.avaritia.api.iface.ITooltip;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.world.InteractionHand;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.monster.Blaze;
+import net.minecraft.world.entity.monster.EnderMan;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.core.BlockPos;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.ShearsItem;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.level.gameevent.GameEvent;
 import net.neoforged.neoforge.common.IShearable;
 import java.util.List;
@@ -21,7 +27,39 @@ public class InfinityShearsItem extends ShearsItem implements ITooltip {
     }
 
     @Override
-    public InteractionResult interactLivingEntity(ItemStack stack, Player player, LivingEntity entity, net.minecraft.world.InteractionHand hand) {
+    public InteractionResult interactLivingEntity(ItemStack stack, Player player, LivingEntity entity, InteractionHand hand) {
+        Level level = player.level();
+        if (entity instanceof EnderMan enderman) {
+            if (!level.isClientSide) {
+                var nbt = enderman.getPersistentData();
+
+                long gameTime = level.getGameTime();
+                long nextUse = nbt.getLong("EnderShearsCooldown");
+                if (gameTime < nextUse) {
+                    return InteractionResult.FAIL;
+                }
+                nbt.putLong("EnderShearsCooldown", gameTime + 24000);
+                enderman.playSound(SoundEvents.ENDERMAN_SCREAM);
+                enderman.spawnAtLocation(Items.ENDER_PEARL,1);
+                enderman.teleportRelative(0.0D, 1.0D, 0.0D);
+            }
+        }
+        if (entity instanceof Blaze blaze) {
+            if (!level.isClientSide) {
+                var nbt = blaze.getPersistentData();
+
+                long gameTime = level.getGameTime();
+                long nextUse = nbt.getLong("BlazeShearsCooldown");
+                if (gameTime < nextUse) {
+                    return InteractionResult.FAIL;
+                }
+                nbt.putLong("BlazeShearsCooldown", gameTime + 24000);
+                blaze.playSound(SoundEvents.BLAZE_HURT);
+                blaze.spawnAtLocation(Items.BLAZE_ROD,1);
+                blaze.teleportRelative(0.0D, 1.0D, 0.0D);
+            }
+        }
+
         if (entity instanceof IShearable target) {
             BlockPos pos = entity.blockPosition();
             boolean isClient = entity.level().isClientSide();
@@ -41,10 +79,6 @@ public class InfinityShearsItem extends ShearsItem implements ITooltip {
                 }
 
                 entity.gameEvent(GameEvent.SHEAR, player);
-
-                if (!isClient) {
-                    stack.hurtAndBreak(1, player, LivingEntity.getSlotForHand(hand));
-                }
 
                 return InteractionResult.sidedSuccess(isClient);
             }

@@ -1,10 +1,7 @@
 package committee.nova.avaritia_expand.init.registry;
 
 import committee.nova.avaritia_expand.AvaritiaExpand;
-import committee.nova.avaritia_expand.client.render.entity.BlazeWindChargeRender;
-import committee.nova.avaritia_expand.client.render.entity.ExtremeWitherRender;
-import committee.nova.avaritia_expand.client.render.entity.ExtremeWitherSkullRender;
-import committee.nova.avaritia_expand.client.render.entity.InfinityTntRender;
+import committee.nova.avaritia_expand.client.render.entity.*;
 import committee.nova.avaritia_expand.common.entity.*;
 import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -61,6 +58,16 @@ public class AEEntities {
                     .updateInterval(10)
                     .build(AvaritiaExpand.rl("blaze_wind_charge").toString()));
 
+    public static final DeferredHolder<EntityType<?>, EntityType<CrystalWindCharge>> CRYSTAL_WIND_CHARGE = ENTITIES.register("crystal_wind_charge",
+            () -> EntityType.Builder.<CrystalWindCharge>of(CrystalWindCharge::new, MobCategory.MISC)
+                    .fireImmune()
+                    .sized(0.3125F, 0.3125F)
+                    .eyeHeight(0.0F)
+                    .clientTrackingRange(4)
+                    .updateInterval(10)
+                    .build(AvaritiaExpand.rl("crystal_wind_charge").toString()));
+
+
 
 
     public static void register(IEventBus bus){
@@ -73,6 +80,7 @@ public class AEEntities {
         EntityRenderers.register(AEEntities.EXTREME_WITHER.get(),ExtremeWitherRender::new);
         EntityRenderers.register(AEEntities.EXTREME_WITHER_SKULL.get(), ExtremeWitherSkullRender::new);
         EntityRenderers.register(AEEntities.BLAZE_WIND_CHARGE.get(), BlazeWindChargeRender::new);
+        EntityRenderers.register(AEEntities.CRYSTAL_WIND_CHARGE.get(), CrystalWindChargeRender::new);
 
     }
 

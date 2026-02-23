@@ -318,6 +318,20 @@ public class AERecipes extends RecipeProvider implements IConditionBuilder {
                 .define('D', ModItems.blaze_cube.get())
                 .unlockedBy("has_item", has(ModItems.blaze_cube.get())).save(consumer);
 
+        //Crystal WindCharge
+
+        ModShapedRecipeBuilder.shaped(RecipeCategory.MISC, AEItems.crystal_wind_charge.get(),3)
+                .pattern("       ")
+                .pattern("  AAA  ")
+                .pattern(" AADAA ")
+                .pattern("AADDDAA")
+                .pattern(" AADAA ")
+                .pattern("  AAA  ")
+                .pattern("       ")
+                .define('A', Items.WIND_CHARGE)
+                .define('D', ModItems.crystal_matrix_ingot.get())
+                .unlockedBy("has_item", has(ModItems.crystal_matrix_ingot.get())).save(consumer);
+
         // Wither Star
 
         ModShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, AEItems.wither_star.get(),2)

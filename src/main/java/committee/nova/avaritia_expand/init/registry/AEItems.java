@@ -9,6 +9,7 @@ import committee.nova.avaritia_expand.common.item.armor.crystal.CrystalLeggingsI
 import committee.nova.avaritia_expand.common.item.misc.WitherStarItem;
 import committee.nova.avaritia_expand.common.item.misc.WitherTotemItem;
 import committee.nova.avaritia_expand.common.item.tool.blaze.BlazeWindChargeItem;
+import committee.nova.avaritia_expand.common.item.tool.crystal.CrystalWindChargeItem;
 import committee.nova.avaritia_expand.common.item.tool.infinity.InfinityBottleItem;
 import committee.nova.avaritia_expand.common.item.tool.blaze.BlazePortableBurnerItem;
 import committee.nova.avaritia_expand.common.item.tool.infinity.InfinityShearsItem;
@@ -92,6 +93,9 @@ public class AEItems {
             ()-> new BlazePortableBurnerItem(new Item.Properties().fireResistant().rarity(ModRarities.UNCOMMON).stacksTo(1)));
     public static DeferredItem<Item> blaze_wind_charge = ITEMS.register("blaze_wind_charge",
             ()-> new BlazeWindChargeItem(new Item.Properties().fireResistant().rarity(ModRarities.UNCOMMON).stacksTo(1).durability(64)));
+
+    public static DeferredItem<Item> crystal_wind_charge = ITEMS.register("crystal_wind_charge",
+            ()-> new CrystalWindChargeItem(new Item.Properties().fireResistant().rarity(ModRarities.EPIC).stacksTo(1).durability(64)));
 
     public static DeferredItem<Item> infinity_bottle = ITEMS.register("infinity_bottle",
             ()-> new InfinityBottleItem(new Item.Properties().fireResistant().rarity(ModRarities.COSMIC.getValue()).stacksTo(1)));
