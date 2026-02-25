@@ -22,19 +22,19 @@ public class AEArmorMaterials {
     public static final Holder<ArmorMaterial> BLAZE = register(
             "blaze_cube", Util.make(
             new EnumMap<>(ArmorItem.Type.class),attribute -> {
-                    attribute.put(ArmorItem.Type.BOOTS, 32);
-                    attribute.put(ArmorItem.Type.LEGGINGS, 35);
-                    attribute.put(ArmorItem.Type.CHESTPLATE, 32);
-                    attribute.put(ArmorItem.Type.HELMET, 30);
+                    attribute.put(ArmorItem.Type.BOOTS, 30);
+                    attribute.put(ArmorItem.Type.LEGGINGS, 32);
+                    attribute.put(ArmorItem.Type.CHESTPLATE, 35);
+                    attribute.put(ArmorItem.Type.HELMET, 32);
 
                     }),25,3f,0.1f,()-> ModItems.blaze_cube.get());
     public static final Holder<ArmorMaterial> CRYSTAL = register(
             "crystal", Util.make(
                     new EnumMap<>(ArmorItem.Type.class),attribute -> {
-                        attribute.put(ArmorItem.Type.BOOTS, 58);
-                        attribute.put(ArmorItem.Type.LEGGINGS, 60);
-                        attribute.put(ArmorItem.Type.CHESTPLATE, 58);
-                        attribute.put(ArmorItem.Type.HELMET, 56);
+                        attribute.put(ArmorItem.Type.BOOTS, 56);
+                        attribute.put(ArmorItem.Type.LEGGINGS, 58);
+                        attribute.put(ArmorItem.Type.CHESTPLATE, 60);
+                        attribute.put(ArmorItem.Type.HELMET, 58);
 
                     }),25,5f,0.5f,()-> ModItems.crystal_matrix_ingot.get());
 
