@@ -20,7 +20,7 @@ public class AEConfig {
         common.comment("Avaritia Expand Common Config");
         common.push("blocks");
         infinityTntMaxExplosionTime = buildInt(common, "infinity_tnt_max_explosion_time", 8000, 0, Integer.MAX_VALUE, "Recommended setting is 2000-8000");
-        infinityTntMaxRange = buildLong(common, "infinity_tnt_max_range", 256, 0, Long.MAX_VALUE, "The maximum range of the Infinity TNT");
+        infinityTntMaxRange = buildLong(common, "infinity_tnt_max_range", 128, 0, Long.MAX_VALUE, "Hey,I don't recommend this value to be greater than 256");
         common.pop();
         neutronSwordMaxRange = buildInt(common, "neutron_sword_max_range", 64, 0, 64, "The maximum teleportation distance of the Neutronium Sword");
         common.push("tools");

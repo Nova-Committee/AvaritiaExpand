@@ -26,7 +26,6 @@ import net.minecraft.world.phys.Vec3;
 
 import javax.annotation.Nullable;
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.List;
 
 public class InfinityTntEntity extends Entity implements TraceableEntity {
@@ -37,17 +36,19 @@ public class InfinityTntEntity extends Entity implements TraceableEntity {
             SynchedEntityData.defineId(InfinityTntEntity.class, EntityDataSerializers.BLOCK_STATE);
 
 
-    private static final int BLOCKS_PER_TICK = AEConfig.infinityTntMaxExplosionTime.get();
+    private static final int BASE_BLOCKS_PER_TICK = AEConfig.infinityTntMaxExplosionTime.get();
 
     private boolean exploding = false;
     private int explosionIndex = 0;
     private int explosionRadius = 0;
     private final int fuseTime = 80;
     private static final float DAMAGE_PER_TICK = 10000.0f;
-    private List<BlockPos> cachedExplosionBlocks;
 
+    private List<BlockPos> cachedExplosionBlocks;
     private boolean playedExplosionStartSound = false;
 
+    private int currentTick = 0;
+    private int totalTicks = 0;
 
     @Nullable
     private LivingEntity owner;
@@ -107,7 +108,9 @@ public class InfinityTntEntity extends Entity implements TraceableEntity {
     }
 
     private void applyDamageToEntities() {
-        double currentRadius = this.explosionIndex / (double) this.cachedExplosionBlocks.size() * this.explosionRadius;
+        double progress = (double) this.explosionIndex / Math.max(1, this.cachedExplosionBlocks.size());
+        double currentRadius = progress * this.explosionRadius;
+
         AABB aabb = new AABB(
                 this.blockPosition().getX() - currentRadius,
                 this.blockPosition().getY() - currentRadius,
@@ -139,9 +142,8 @@ public class InfinityTntEntity extends Entity implements TraceableEntity {
         BlockPos center = this.blockPosition();
         this.cachedExplosionBlocks = collectSphereBlocks(center, this.explosionRadius);
 
-        this.cachedExplosionBlocks.sort(
-                Comparator.comparingDouble(p -> p.distSqr(center))
-        );
+        this.currentTick = 0;
+        this.totalTicks = calculateOptimalTicks(this.cachedExplosionBlocks.size());
 
         if (!this.level().isClientSide) {
             Vec3 pos = this.position();
@@ -166,11 +168,23 @@ public class InfinityTntEntity extends Entity implements TraceableEntity {
         }
     }
 
-
+    private int calculateOptimalTicks(int totalBlocks) {
+        double targetSeconds = 15.0;
+        return (int) (targetSeconds * 20);
+    }
 
     private void processExplosionTick() {
+        this.currentTick++;
+
+        double progress = (double) this.currentTick / this.totalTicks;
+        double accelerationMultiplier = 1.0 + (progress * progress * 4.0);
+
+        int blocksToProcess = (int) (BASE_BLOCKS_PER_TICK * accelerationMultiplier);
+        blocksToProcess = Math.max(BASE_BLOCKS_PER_TICK, blocksToProcess);
+        blocksToProcess = Math.min(blocksToProcess, 500000);
+
         int end = Math.min(
-                this.explosionIndex + BLOCKS_PER_TICK,
+                this.explosionIndex + blocksToProcess,
                 this.cachedExplosionBlocks.size()
         );
 
@@ -218,7 +232,7 @@ public class InfinityTntEntity extends Entity implements TraceableEntity {
     }
 
     private List<BlockPos> collectSphereBlocks(BlockPos center, int radius) {
-        List<BlockPos> list = new ArrayList<>();
+        List<BlockPos> list = new ArrayList<>(radius * radius * 2);
         int r2 = radius * radius;
 
         int cx = center.getX();
@@ -234,6 +248,13 @@ public class InfinityTntEntity extends Entity implements TraceableEntity {
                 }
             }
         }
+
+        list.sort((pos1, pos2) -> {
+            double dist1 = pos1.distSqr(center);
+            double dist2 = pos2.distSqr(center);
+            return Double.compare(dist1, dist2);
+        });
+
         return list;
     }
 
@@ -242,6 +263,9 @@ public class InfinityTntEntity extends Entity implements TraceableEntity {
         tag.putShort("fuse", (short) this.getFuse());
         tag.put("block_state", NbtUtils.writeBlockState(this.getBlockState()));
         tag.putBoolean("played_explosion_start_sound", this.playedExplosionStartSound);
+        tag.putInt("explosion_index", this.explosionIndex);
+        tag.putInt("current_tick", this.currentTick);
+        tag.putInt("total_ticks", this.totalTicks);
     }
 
     @Override
@@ -255,9 +279,17 @@ public class InfinityTntEntity extends Entity implements TraceableEntity {
                     )
             );
         }
-        // 读取音效播放状态
         if (tag.contains("played_explosion_start_sound")) {
             this.playedExplosionStartSound = tag.getBoolean("played_explosion_start_sound");
+        }
+        if (tag.contains("explosion_index")) {
+            this.explosionIndex = tag.getInt("explosion_index");
+        }
+        if (tag.contains("current_tick")) {
+            this.currentTick = tag.getInt("current_tick");
+        }
+        if (tag.contains("total_ticks")) {
+            this.totalTicks = tag.getInt("total_ticks");
         }
     }
 
@@ -288,6 +320,9 @@ public class InfinityTntEntity extends Entity implements TraceableEntity {
         if (entity instanceof InfinityTntEntity tnt) {
             this.owner = tnt.owner;
             this.playedExplosionStartSound = tnt.playedExplosionStartSound;
+            this.explosionIndex = tnt.explosionIndex;
+            this.currentTick = tnt.currentTick;
+            this.totalTicks = tnt.totalTicks;
         }
     }
 
@@ -297,7 +332,6 @@ public class InfinityTntEntity extends Entity implements TraceableEntity {
         return super.changeDimension(transition);
     }
 
-    // 重写获取音效源方法，确保音效分类正确
     @Override
     public SoundSource getSoundSource() {
         return SoundSource.BLOCKS;

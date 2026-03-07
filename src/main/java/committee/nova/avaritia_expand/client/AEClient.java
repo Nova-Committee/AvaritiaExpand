@@ -4,10 +4,12 @@ import committee.nova.avaritia_expand.AvaritiaExpand;
 import committee.nova.avaritia_expand.client.model.entity.ExtremeWitherModel;
 import committee.nova.avaritia_expand.client.model.entity.ExtremeWitherSkullModel;
 import committee.nova.avaritia_expand.client.model.geo.AEModelLayers;
+import committee.nova.avaritia_expand.client.render.InfinityBookRender;
 import committee.nova.avaritia_expand.client.render.entity.ExtremeWitherSkullRender;
 import committee.nova.avaritia_expand.client.screen.AEConfigScreen;
 import committee.nova.avaritia_expand.common.item.armor.crystal.CrystalArmorItem;
 import committee.nova.avaritia_expand.init.registry.AEEntities;
+import committee.nova.avaritia_expand.init.registry.AEItems;
 import committee.nova.avaritia_expand.init.registry.AEMenus;
 import net.minecraft.client.model.ArmorStandModel;
 import net.minecraft.client.model.HumanoidModel;
@@ -125,4 +127,5 @@ public class AEClient {
                 ExtremeWitherSkullRender::createSkullLayer
         );
     }
+
 }

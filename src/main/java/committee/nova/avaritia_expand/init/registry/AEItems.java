@@ -10,6 +10,7 @@ import committee.nova.avaritia_expand.common.item.misc.WitherStarItem;
 import committee.nova.avaritia_expand.common.item.misc.WitherTotemItem;
 import committee.nova.avaritia_expand.common.item.tool.blaze.BlazeWindChargeItem;
 import committee.nova.avaritia_expand.common.item.tool.crystal.CrystalWindChargeItem;
+import committee.nova.avaritia_expand.common.item.tool.infinity.InfinityBookItem;
 import committee.nova.avaritia_expand.common.item.tool.infinity.InfinityBottleItem;
 import committee.nova.avaritia_expand.common.item.tool.blaze.BlazePortableBurnerItem;
 import committee.nova.avaritia_expand.common.item.tool.infinity.InfinityShearsItem;
@@ -101,6 +102,8 @@ public class AEItems {
             ()-> new InfinityBottleItem(new Item.Properties().fireResistant().rarity(ModRarities.COSMIC.getValue()).stacksTo(1)));
     public static DeferredItem<Item> infinity_shears = ITEMS.register("infinity_shears",
             ()-> new InfinityShearsItem(new Item.Properties().fireResistant().rarity(ModRarities.COSMIC.getValue()).stacksTo(1)));
+    public static DeferredItem<Item> infinity_book = ITEMS.register("infinity_book",
+            ()-> new InfinityBookItem(new Item.Properties().fireResistant().rarity(ModRarities.COSMIC.getValue()).stacksTo(1)));
 
 
     public static DeferredItem<Item> wither_star = ITEMS.register("wither_star",

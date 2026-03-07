@@ -73,7 +73,7 @@ public class AEConfigScreen extends Screen {
     private void addBooleanEntry(String titleKey, ModConfigSpec.BooleanValue configValue,
                                  Component description, Consumer<Boolean> onValueChange, Supplier<Boolean> valueSupplier) {
         configEntries.add(new BooleanConfigEntry(
-                Component.translatable("config.avaritia." + titleKey),
+                Component.translatable("config.avaritia_expand." + titleKey),
                 description,
                 configValue.get(),
                 onValueChange,
@@ -85,7 +85,7 @@ public class AEConfigScreen extends Screen {
     private void addIntEntry(String titleKey, ModConfigSpec.IntValue configValue, int min, int max,
                              Component description, Consumer<Integer> onValueChange, Supplier<Integer> valueSupplier) {
         configEntries.add(new IntConfigEntry(
-                Component.translatable("config.avaritia." + titleKey),
+                Component.translatable("config.avaritia_expand." + titleKey),
                 description,
                 configValue.get(),
                 min,
@@ -99,7 +99,7 @@ public class AEConfigScreen extends Screen {
     private void addDoubleEntry(String titleKey, ModConfigSpec.DoubleValue configValue, double min, double max,
                                 Component description, Consumer<Double> onValueChange, Supplier<Double> valueSupplier) {
         configEntries.add(new DoubleConfigEntry(
-                Component.translatable("config.avaritia." + titleKey),
+                Component.translatable("config.avaritia_expand." + titleKey),
                 description,
                 configValue.get(),
                 min,
@@ -113,7 +113,7 @@ public class AEConfigScreen extends Screen {
     private void addLongEntry(String titleKey, ModConfigSpec.LongValue configValue, long min, long max,
                               Component description, Consumer<Long> onValueChange, Supplier<Long> valueSupplier) {
         configEntries.add(new LongConfigEntry(
-                Component.translatable("config.avaritia." + titleKey),
+                Component.translatable("config.avaritia_expand." + titleKey),
                 description,
                 configValue.get(),
                 min,

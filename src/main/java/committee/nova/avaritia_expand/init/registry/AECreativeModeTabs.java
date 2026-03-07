@@ -27,6 +27,7 @@ public class AECreativeModeTabs {
                 output.accept(AEItems.singularity_stew.get());
                 output.accept(AEItems.infinity_bottle.get());
                 output.accept(AEItems.infinity_shears.get());
+                output.accept(AEItems.infinity_book.get());
                 output.accept(AEItems.blaze_portable_burner.get());
                 output.accept(AEItems.blaze_wind_charge.get());
                 output.accept(AEItems.crystal_wind_charge.get());
