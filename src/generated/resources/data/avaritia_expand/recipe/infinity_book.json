@@ -1,0 +1,30 @@
+{
+  "type": "avaritia:shaped_table",
+  "key": {
+    "A": {
+      "item": "avaritia:infinity_ingot"
+    },
+    "C": {
+      "item": "minecraft:glass"
+    },
+    "E": {
+      "item": "avaritia:infinity_catalyst"
+    }
+  },
+  "pattern": [
+    "         ",
+    "         ",
+    "         ",
+    "         ",
+    "E   C   E",
+    "AEE   EEA",
+    " AAEAEAA ",
+    "   A A   ",
+    "         "
+  ],
+  "result": {
+    "count": 1,
+    "id": "avaritia_expand:infinity_book"
+  },
+  "tier": 4
+}

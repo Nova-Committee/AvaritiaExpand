@@ -1,6 +1,7 @@
 {
   "credit": "Made with Blockbench",
   "parent": "builtin/entity",
+
   "texture_size": [
     64,
     64
@@ -89,6 +90,6 @@
     }
   },
   "textures": {
-    "particle": "avaritia_expnad:item/layer_0"
+    "particle": "avaritia_expnad:item/tools/infinity_book/layer_1"
   }
 }

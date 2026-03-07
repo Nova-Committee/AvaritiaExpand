@@ -182,6 +182,22 @@ public class AERecipes extends RecipeProvider implements IConditionBuilder {
                 .define('F', Items.DRAGON_BREATH)
                 .unlockedBy("has_item", has(ModBlocks.neutron.get())).save(consumer);
 
+        // Infinity Book
+        ModShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, AEItems.infinity_book.get())
+                .pattern("         ")
+                .pattern("         ")
+                .pattern("         ")
+                .pattern("         ")
+                .pattern("E   C   E")
+                .pattern("AEE   EEA")
+                .pattern(" AAEAEAA ")
+                .pattern("   A A   ")
+                .pattern("         ")
+                .define('A', ModItems.infinity_ingot.get())
+                .define('E', ModItems.infinity_catalyst.get())
+                .define('C', Items.GLASS)
+                .unlockedBy("has_item", has(ModItems.infinity_ingot.get())).save(consumer);
+
         //Neutron Decomposer
 
         ModShapedRecipeBuilder.shaped(RecipeCategory.MISC, AEBlocks.neutron_decompose.get())
