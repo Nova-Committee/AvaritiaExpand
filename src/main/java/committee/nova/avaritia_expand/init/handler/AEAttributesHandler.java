@@ -1,6 +1,7 @@
 package committee.nova.avaritia_expand.init.handler;
 
 import committee.nova.avaritia_expand.AvaritiaExpand;
+import committee.nova.avaritia_expand.common.entity.BlazeVindicatorEntity;
 import committee.nova.avaritia_expand.common.entity.ExtremeWitherEntity;
 import committee.nova.avaritia_expand.init.registry.AEEntities;
 import net.neoforged.bus.api.SubscribeEvent;
@@ -13,5 +14,6 @@ public class AEAttributesHandler {
     @SubscribeEvent
     public static void addAttributes(EntityAttributeCreationEvent event) {
         event.put(AEEntities.EXTREME_WITHER.get(), ExtremeWitherEntity.createAttributes().build());
+        event.put(AEEntities.BLAZE_VINDICATOR.get(), BlazeVindicatorEntity.createAttributes().build());
     }
 }

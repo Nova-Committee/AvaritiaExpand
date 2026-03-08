@@ -22,4 +22,10 @@ public class AEModelLayers {
                     AvaritiaExpand.rl("extreme_wither_skull"),
                     "main"
             );
+
+    public static final ModelLayerLocation BLAZE_VINDICATOR =
+            new ModelLayerLocation(
+                    AvaritiaExpand.rl("blaze_vindicator"),
+                    "main"
+            );
 }

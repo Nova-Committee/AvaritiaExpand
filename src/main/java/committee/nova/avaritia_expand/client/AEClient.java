@@ -1,5 +1,6 @@
 package committee.nova.avaritia_expand.client;
 
+import com.mojang.blaze3d.vertex.MeshData;
 import committee.nova.avaritia_expand.AvaritiaExpand;
 import committee.nova.avaritia_expand.client.model.entity.ExtremeWitherModel;
 import committee.nova.avaritia_expand.client.model.entity.ExtremeWitherSkullModel;
@@ -13,8 +14,10 @@ import committee.nova.avaritia_expand.init.registry.AEItems;
 import committee.nova.avaritia_expand.init.registry.AEMenus;
 import net.minecraft.client.model.ArmorStandModel;
 import net.minecraft.client.model.HumanoidModel;
+import net.minecraft.client.model.IllagerModel;
 import net.minecraft.client.model.PlayerModel;
 import net.minecraft.client.model.geom.builders.CubeDeformation;
+import net.minecraft.client.model.geom.builders.LayerDefinition;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.Item;
@@ -125,6 +128,10 @@ public class AEClient {
         event.registerLayerDefinition(
                 AEModelLayers.EXTREME_WITHER_SKULL,
                 ExtremeWitherSkullRender::createSkullLayer
+        );
+        event.registerLayerDefinition(
+                AEModelLayers.BLAZE_VINDICATOR,
+                IllagerModel::createBodyLayer
         );
     }
 

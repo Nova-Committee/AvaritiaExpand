@@ -32,6 +32,7 @@ public class AEItemTags extends IntrinsicHolderTagsProvider<Item> {
     protected void addTags(HolderLookup.@NotNull Provider p_256380_) {
         tag(ModTags.IMMORTAL_ITEM).add(AEItems.wither_star.get());
         tag(ModTags.IMMORTAL_ITEM).add(AEItems.wither_totem.get());
+        tag(ModTags.IMMORTAL_ITEM).add(AEItems.blaze_totem.get());
         tag(ItemTags.ARMOR_ENCHANTABLE).add(AEItems.blaze_helmet.get());
         tag(ItemTags.HEAD_ARMOR_ENCHANTABLE).add(AEItems.blaze_helmet.get());
         tag(ItemTags.ARMOR_ENCHANTABLE).add(AEItems.blaze_chestplate.get());

@@ -67,6 +67,14 @@ public class AEEntities {
                     .updateInterval(10)
                     .build(AvaritiaExpand.rl("crystal_wind_charge").toString()));
 
+    public static final DeferredHolder<EntityType<?>, EntityType<BlazeVindicatorEntity>> BLAZE_VINDICATOR = ENTITIES.register("blaze_vindicator",
+            () -> EntityType.Builder.<BlazeVindicatorEntity>of(BlazeVindicatorEntity::new, MobCategory.MONSTER)
+                    .sized(0.6F, 1.95F)
+                    .passengerAttachments(2.0F)
+                    .fireImmune()
+                    .ridingOffset(-0.6F)
+                    .clientTrackingRange(8)
+                    .build(AvaritiaExpand.rl("blaze_vindicator").toString()));
 
 
 
@@ -81,6 +89,7 @@ public class AEEntities {
         EntityRenderers.register(AEEntities.EXTREME_WITHER_SKULL.get(), ExtremeWitherSkullRender::new);
         EntityRenderers.register(AEEntities.BLAZE_WIND_CHARGE.get(), BlazeWindChargeRender::new);
         EntityRenderers.register(AEEntities.CRYSTAL_WIND_CHARGE.get(), CrystalWindChargeRender::new);
+        EntityRenderers.register(AEEntities.BLAZE_VINDICATOR.get(), BlazeVindicatorRender::new);
 
     }
 

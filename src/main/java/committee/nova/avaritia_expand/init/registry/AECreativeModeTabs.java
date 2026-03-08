@@ -33,6 +33,7 @@ public class AECreativeModeTabs {
                 output.accept(AEItems.crystal_wind_charge.get());
                 output.accept(AEItems.wither_totem.get());
                 output.accept(AEItems.wither_star.get());
+                output.accept(AEItems.blaze_totem.get());
                 output.accept(AEItems.blaze_helmet.get());
                 output.accept(AEItems.blaze_chestplate.get());
                 output.accept(AEItems.blaze_leggings.get());

@@ -7,6 +7,7 @@ import net.minecraft.core.HolderLookup;
 import net.minecraft.data.loot.EntityLootSubProvider;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.flag.FeatureFlags;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
@@ -62,6 +63,53 @@ public class AEEntityLootTables extends EntityLootSubProvider {
                                 .add(
                                         LootItem.lootTableItem(AEItems.wither_totem)
                                                 .when(LootItemRandomChanceCondition.randomChance(0.1F)) // 10%概率掉落
+                                )
+                                .when(LootItemKilledByPlayerCondition.killedByPlayer())
+                )
+        );
+        this.add(AEEntities.BLAZE_VINDICATOR.get(), LootTable.lootTable()
+                .withPool(
+                        LootPool.lootPool()
+                                .setRolls(ConstantValue.exactly(1.0F))
+                                .add(
+                                        LootItem.lootTableItem(ModItems.blaze_axe)
+                                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(1.0F)))
+                                )
+                                .when(LootItemKilledByPlayerCondition.killedByPlayer())
+                )
+                .withPool(
+                        LootPool.lootPool()
+                                .setRolls(ConstantValue.exactly(1.0F))
+                                .add(
+                                        LootItem.lootTableItem(ModItems.blaze_cube)
+                                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(10)))
+                                )
+                                .when(LootItemKilledByPlayerCondition.killedByPlayer())
+                )
+                .withPool(
+                        LootPool.lootPool()
+                                .setRolls(ConstantValue.exactly(1.0F))
+                                .add(
+                                        LootItem.lootTableItem(Items.EMERALD)
+                                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(25.0F)))
+                                )
+                                .when(LootItemKilledByPlayerCondition.killedByPlayer())
+                )
+                .withPool(
+                        LootPool.lootPool()
+                                .setRolls(ConstantValue.exactly(1.0F))
+                                .add(
+                                        LootItem.lootTableItem(Items.TOTEM_OF_UNDYING)
+                                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly(5.0F)))
+                                )
+                                .when(LootItemKilledByPlayerCondition.killedByPlayer())
+                )
+                .withPool(
+                        LootPool.lootPool()
+                                .setRolls(ConstantValue.exactly(1.0F))
+                                .add(
+                                        LootItem.lootTableItem(AEItems.blaze_totem)
+                                                .when(LootItemRandomChanceCondition.randomChance(0.1F))
                                 )
                                 .when(LootItemKilledByPlayerCondition.killedByPlayer())
                 )

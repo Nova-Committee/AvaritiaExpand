@@ -8,6 +8,7 @@ import committee.nova.avaritia_expand.common.item.armor.crystal.CrystalHelmetIte
 import committee.nova.avaritia_expand.common.item.armor.crystal.CrystalLeggingsItem;
 import committee.nova.avaritia_expand.common.item.misc.WitherStarItem;
 import committee.nova.avaritia_expand.common.item.misc.WitherTotemItem;
+import committee.nova.avaritia_expand.common.item.tool.blaze.BlazeTotemItem;
 import committee.nova.avaritia_expand.common.item.tool.blaze.BlazeWindChargeItem;
 import committee.nova.avaritia_expand.common.item.tool.crystal.CrystalWindChargeItem;
 import committee.nova.avaritia_expand.common.item.tool.infinity.InfinityBookItem;
@@ -94,6 +95,8 @@ public class AEItems {
             ()-> new BlazePortableBurnerItem(new Item.Properties().fireResistant().rarity(ModRarities.UNCOMMON).stacksTo(1)));
     public static DeferredItem<Item> blaze_wind_charge = ITEMS.register("blaze_wind_charge",
             ()-> new BlazeWindChargeItem(new Item.Properties().fireResistant().rarity(ModRarities.UNCOMMON).stacksTo(1).durability(64)));
+    public static DeferredItem<Item> blaze_totem = ITEMS.register("blaze_totem",
+            ()-> new BlazeTotemItem(new Item.Properties().fireResistant().rarity(ModRarities.UNCOMMON).stacksTo(1)));
 
     public static DeferredItem<Item> crystal_wind_charge = ITEMS.register("crystal_wind_charge",
             ()-> new CrystalWindChargeItem(new Item.Properties().fireResistant().rarity(ModRarities.EPIC).stacksTo(1).durability(64)));

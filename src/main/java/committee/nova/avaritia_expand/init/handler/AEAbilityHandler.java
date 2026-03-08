@@ -7,6 +7,7 @@ import committee.nova.avaritia_expand.common.item.armor.crystal.CrystalBootsItem
 import committee.nova.avaritia_expand.common.item.armor.crystal.CrystalChestplateItem;
 import committee.nova.avaritia_expand.common.item.armor.crystal.CrystalHelmetItem;
 import committee.nova.avaritia_expand.common.item.armor.crystal.CrystalLeggingsItem;
+import committee.nova.avaritia_expand.common.item.tool.blaze.BlazeTotemItem;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
@@ -24,6 +25,7 @@ import net.minecraft.world.phys.Vec3;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.event.entity.living.LivingDamageEvent;
+import net.neoforged.neoforge.event.entity.living.LivingDropsEvent;
 import net.neoforged.neoforge.event.entity.living.LivingFallEvent;
 import net.neoforged.neoforge.event.entity.living.LivingIncomingDamageEvent;
 import net.neoforged.neoforge.event.tick.PlayerTickEvent;
@@ -307,5 +309,44 @@ public class AEAbilityHandler {
     private static boolean isWearingCrystalHelmet(Player player) {
         ItemStack helmet = player.getItemBySlot(EquipmentSlot.HEAD);
         return !helmet.isEmpty() && helmet.getItem() instanceof CrystalHelmetItem;
+    }
+
+    @SubscribeEvent
+    public static void onLivingDrops(LivingDropsEvent event) {
+        if (event.getEntity().level().isClientSide()) return;
+
+        LivingEntity killedEntity = event.getEntity();
+        Level level = killedEntity.level();
+
+        for (Player player : level.players()) {
+            if (hasBlazeTotem(player)) {
+                for (var drop : event.getDrops()) {
+                    ItemStack stack = drop.getItem();
+                    if (!stack.isEmpty()) {
+                        stack.setCount(stack.getCount() * 2);
+                    }
+                }
+                break;
+            }
+        }
+    }
+
+    private static boolean hasBlazeTotem(Player player) {
+        for (ItemStack stack : player.getInventory().items) {
+            if (!stack.isEmpty() && stack.getItem() instanceof BlazeTotemItem) {
+                return true;
+            }
+        }
+        for (ItemStack stack : player.getInventory().armor) {
+            if (!stack.isEmpty() && stack.getItem() instanceof BlazeTotemItem) {
+                return true;
+            }
+        }
+        for (ItemStack stack : player.getInventory().offhand) {
+            if (!stack.isEmpty() && stack.getItem() instanceof BlazeTotemItem) {
+                return true;
+            }
+        }
+        return false;
     }
 }

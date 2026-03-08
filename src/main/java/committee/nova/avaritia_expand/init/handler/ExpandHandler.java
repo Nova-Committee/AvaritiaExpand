@@ -1,17 +1,23 @@
 package committee.nova.avaritia_expand.init.handler;
 
 import committee.nova.avaritia_expand.AvaritiaExpand;
+import committee.nova.avaritia_expand.common.entity.BlazeVindicatorEntity;
 import committee.nova.avaritia_expand.common.item.tool.neutron.NeutronSwordItem;
 import committee.nova.avaritia_expand.init.registry.AEBlocks;
+import committee.nova.avaritia_expand.init.registry.AEEntities;
 import committee.nova.avaritia_expand.init.registry.AEItems;
 import committee.nova.mods.avaritia.init.registry.ModBlocks;
+import committee.nova.mods.avaritia.init.registry.ModItems;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.world.entity.MobSpawnType;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.BannerBlock;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.entity.BannerBlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;

@@ -31,6 +31,12 @@ public class AEEntityTags extends EntityTypeTagsProvider {
                 .add(ModEntities.HEAVEN_ARROW.get())
                 .add(ModEntities.BURNING_ARROW.get())
                 .add(ModEntities.TRACE_ARROW.get())
+                .add(ModEntities.SUN_PRO.get())
+                .add(ModEntities.RAIN_PRO.get())
+                .add(ModEntities.STORM_PRO.get())
+                .add(ModEntities.HEAVEN_SUB_ARROW.get())
+                .add(ModEntities.NEUTRON_ARROW.get())
+                .add(ModEntities.tntProEntity.get())
 
         ;
     }

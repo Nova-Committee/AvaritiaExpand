@@ -26,6 +26,7 @@
   "item.avaritia_expand.crystal_wind_charge": "御气风弹",
   "item.avaritia_expand.wither_star": "凋零之星",
   "item.avaritia_expand.wither_totem": "凋零傀儡",
+  "item.avaritia_expand.blaze_totem": "烈焰图腾",
   "block.avaritia_expand.infinity_tnt_block": "无尽TNT",
   "block.avaritia_expand.jeb_wool": "开发者羊毛",
   "block.avaritia_expand.jeb_carpet": "开发者地毯",
@@ -37,6 +38,7 @@
   "tooltip.avaritia_expand.infinity_shears.desc": "你的意思是你真的做了?随你便吧",
   "tooltip.avaritia_expand.infinity_tnt_block.desc": "§8§o只需一点点...",
   "tooltip.avaritia_expand.wither_star.desc": "这将召唤一个强力的敌人",
+  "tooltip.avaritia_expand.blaze.desc": "战利品 *2",
   "entity.avaritia_expand.infinity_tnt_entity":"无尽TNT",
   "title.avaritia_expand.config.title": "无尽贪婪：拓展",
   "config.avaritia_expand.category.blocks": "方块",
@@ -50,5 +52,7 @@
   "advancements.avaritia_expand.infinity_shears.desc": "Never gonna give you up",
   "advancements.avaritia_expand.infinity_shears.title": "你被整了",
   "entity.avaritia_expand.extreme_wither": "超限凋零",
-  "entity.avaritia_expand.extreme_wither_skull": "超限凋零头颅"
+  "entity.avaritia_expand.extreme_wither_skull": "超限凋零头颅",
+  "entity.avaritia_expand.blaze_vindicator": "烈狱卫道士",
+  "jei.tooltip.avaritia_expand.blaze_axe": "右键不详旗帜召唤烈狱卫道士"
 }
