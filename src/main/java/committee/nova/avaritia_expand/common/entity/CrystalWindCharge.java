@@ -62,6 +62,7 @@ public class CrystalWindCharge extends AbstractWindCharge {
                 double yd = 0.1;
 
                 BladeSlashEntity slash = new BladeSlashEntity(level, pos.x(), pos.y(), pos.z());
+                slash.setOwner(getOwner());
 
                 slash.setPos(pos.x(), pos.y(), pos.z());
                 slash.setDeltaMovement(xd, yd, zd);

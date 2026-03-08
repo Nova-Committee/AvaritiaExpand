@@ -195,7 +195,7 @@ public class AERecipes extends RecipeProvider implements IConditionBuilder {
                 .pattern("         ")
                 .define('A', ModItems.infinity_ingot.get())
                 .define('E', ModItems.infinity_catalyst.get())
-                .define('C', Items.GLASS)
+                .define('C', Items.GRASS_BLOCK)
                 .unlockedBy("has_item", has(ModItems.infinity_ingot.get())).save(consumer);
 
         //Neutron Decomposer

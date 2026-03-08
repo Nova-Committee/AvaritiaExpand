@@ -1,6 +1,8 @@
 package committee.nova.avaritia_expand.init.data;
 
+import committee.nova.avaritia_expand.AvaritiaExpand;
 import committee.nova.avaritia_expand.init.data.provider.AEBlockTags;
+import committee.nova.avaritia_expand.init.data.provider.AEEntityTags;
 import committee.nova.avaritia_expand.init.data.provider.AEItemTags;
 import committee.nova.avaritia_expand.init.data.provider.AERecipes;
 import committee.nova.avaritia_expand.init.data.provider.loot.AELootTables;
@@ -30,6 +32,7 @@ public class AEDataGen {
             generator.addProvider(true, new AELootTables(output, lookupProvider));
             generator.addProvider(true, new AEItemTags(output, lookupProvider, helper));
             generator.addProvider(true, new AEBlockTags(output, lookupProvider, helper));
+            generator.addProvider(true, new AEEntityTags(output, lookupProvider, helper));
         }
     }
 }
