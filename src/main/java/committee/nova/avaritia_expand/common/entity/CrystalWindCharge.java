@@ -4,18 +4,23 @@ import committee.nova.avaritia_expand.init.registry.AEEntities;
 import committee.nova.mods.avaritia.common.entity.BladeSlashEntity;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.tags.BlockTags;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.projectile.ProjectileDeflection;
 import net.minecraft.world.entity.projectile.windcharge.AbstractWindCharge;
 import net.minecraft.world.level.ExplosionDamageCalculator;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.SimpleExplosionDamageCalculator;
 import net.minecraft.world.phys.Vec3;
 
+import javax.annotation.Nullable;
 import java.util.Optional;
 import java.util.function.Function;
 
 public class CrystalWindCharge extends AbstractWindCharge {
+
+    private int noDeflectTicks = 5;
 
     private static final ExplosionDamageCalculator EXPLOSION_DAMAGE_CALCULATOR =
             new SimpleExplosionDamageCalculator(
@@ -70,4 +75,18 @@ public class CrystalWindCharge extends AbstractWindCharge {
             }
         }
     }
+
+    @Override
+    public void tick() {
+        super.tick();
+        if (this.noDeflectTicks > 0) {
+            this.noDeflectTicks--;
+        }
+    }
+
+    @Override
+    public boolean deflect(ProjectileDeflection deflection, @Nullable Entity entity, @Nullable Entity owner, boolean deflectedByPlayer) {
+        return this.noDeflectTicks > 0 ? false : super.deflect(deflection, entity, owner, deflectedByPlayer);
+    }
+
 }
