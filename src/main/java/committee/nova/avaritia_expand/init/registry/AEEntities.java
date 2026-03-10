@@ -67,6 +67,15 @@ public class AEEntities {
                     .updateInterval(10)
                     .build(AvaritiaExpand.rl("crystal_wind_charge").toString()));
 
+    public static final DeferredHolder<EntityType<?>, EntityType<NeutronWindCharge>> NEUTRON_WIND_CHARGE = ENTITIES.register("neutron_wind_charge",
+            () -> EntityType.Builder.<NeutronWindCharge>of(NeutronWindCharge::new, MobCategory.MISC)
+                    .fireImmune()
+                    .sized(0.3125F, 0.3125F)
+                    .eyeHeight(0.0F)
+                    .clientTrackingRange(4)
+                    .updateInterval(10)
+                    .build(AvaritiaExpand.rl("neutron_wind_charge").toString()));
+
     public static final DeferredHolder<EntityType<?>, EntityType<BlazeVindicatorEntity>> BLAZE_VINDICATOR = ENTITIES.register("blaze_vindicator",
             () -> EntityType.Builder.<BlazeVindicatorEntity>of(BlazeVindicatorEntity::new, MobCategory.MONSTER)
                     .sized(0.6F, 1.95F)
@@ -89,6 +98,7 @@ public class AEEntities {
         EntityRenderers.register(AEEntities.EXTREME_WITHER_SKULL.get(), ExtremeWitherSkullRender::new);
         EntityRenderers.register(AEEntities.BLAZE_WIND_CHARGE.get(), BlazeWindChargeRender::new);
         EntityRenderers.register(AEEntities.CRYSTAL_WIND_CHARGE.get(), CrystalWindChargeRender::new);
+        EntityRenderers.register(AEEntities.NEUTRON_WIND_CHARGE.get(), NeutronWindChargeRender::new);
         EntityRenderers.register(AEEntities.BLAZE_VINDICATOR.get(), BlazeVindicatorRender::new);
 
     }

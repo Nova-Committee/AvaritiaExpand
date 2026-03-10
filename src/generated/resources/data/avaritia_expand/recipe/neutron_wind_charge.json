@@ -1,0 +1,25 @@
+{
+  "type": "avaritia:shaped_table",
+  "key": {
+    "A": {
+      "item": "minecraft:wind_charge"
+    },
+    "D": {
+      "item": "avaritia:neutron_ingot"
+    }
+  },
+  "pattern": [
+    "       ",
+    "  AAA  ",
+    " ADDDA ",
+    "ADD DDA",
+    " ADDDA ",
+    "  AAA  ",
+    "       "
+  ],
+  "result": {
+    "count": 1,
+    "id": "avaritia_expand:neutron_wind_charge"
+  },
+  "tier": 3
+}

@@ -348,6 +348,20 @@ public class AERecipes extends RecipeProvider implements IConditionBuilder {
                 .define('D', ModItems.crystal_matrix_ingot.get())
                 .unlockedBy("has_item", has(ModItems.crystal_matrix_ingot.get())).save(consumer);
 
+        //Neutron WindCharge
+
+        ModShapedRecipeBuilder.shaped(RecipeCategory.MISC, AEItems.neutron_wind_charge.get(),3)
+                .pattern("       ")
+                .pattern("  AAA  ")
+                .pattern(" ADDDA ")
+                .pattern("ADD DDA")
+                .pattern(" ADDDA ")
+                .pattern("  AAA  ")
+                .pattern("       ")
+                .define('A', Items.WIND_CHARGE)
+                .define('D', ModItems.neutron_ingot.get())
+                .unlockedBy("has_item", has(ModItems.neutron_ingot.get())).save(consumer);
+
         // Wither Star
 
         ModShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, AEItems.wither_star.get(),2)

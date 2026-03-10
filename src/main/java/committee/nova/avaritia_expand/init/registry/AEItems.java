@@ -55,6 +55,8 @@ public class AEItems {
         public static DeferredItem<Item> neutron_mace = ITEMS.register("neutron_mace",
             ()-> new NeutronMaceItem(new Item.Properties()
                     .fireResistant().rarity(ModRarities.EPIC).stacksTo(1).attributes(NeutronMaceItem.createAttributes())));
+    public static DeferredItem<Item> neutron_wind_charge = ITEMS.register("neutron_wind_charge",
+            ()-> new NeutronWindChargeItem(new Item.Properties().fireResistant().rarity(ModRarities.EPIC).stacksTo(1).durability(256)));
 
 
 
