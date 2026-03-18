@@ -12,10 +12,13 @@ public class AEFoods {
             .effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SPEED, (int)Math.ceil((double)3600.0F * ratio), 2),1.0F)
             .effect(() -> new MobEffectInstance(MobEffects.SATURATION, (int)Math.ceil((double)3600.0F * ratio), 1),1.0F)
             .effect(() -> new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, (int)Math.ceil((double)3600.0F * ratio), 2),1.0F)
+            .alwaysEdible()
             .build();
     public static final FoodProperties singularity_stew = new FoodProperties.Builder()
             .nutrition(128).saturationModifier(128)
             .effect(() -> new MobEffectInstance(MobEffects.SATURATION, (int)Math.ceil((double)12000.0F * ratio), 1), 1.0F)
             .effect(() -> new MobEffectInstance(MobEffects.DAMAGE_BOOST, (int)Math.ceil((double)12000.0F * ratio), 2),1.0F)
+            .effect(() -> new MobEffectInstance(MobEffects.ABSORPTION, (int)Math.ceil((double)12000.0F * ratio), 5),1.0F)
+            .alwaysEdible()
             .build();
 }

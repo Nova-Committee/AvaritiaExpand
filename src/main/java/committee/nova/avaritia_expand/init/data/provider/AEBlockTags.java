@@ -30,5 +30,9 @@ public class AEBlockTags extends IntrinsicHolderTagsProvider<Block> {
                 AEBlocks.neutron_decompose.get()
 
         );
+        tag(BlockTags.RAILS).add(
+                AEBlocks.crystal_rail.get()
+
+        );
     }
 }

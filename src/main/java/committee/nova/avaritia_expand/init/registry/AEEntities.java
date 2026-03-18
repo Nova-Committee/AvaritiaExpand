@@ -85,6 +85,13 @@ public class AEEntities {
                     .clientTrackingRange(8)
                     .build(AvaritiaExpand.rl("blaze_vindicator").toString()));
 
+    public static final DeferredHolder<EntityType<?>, EntityType<NeutronMinecart>> NEUTRON_MINECART = ENTITIES.register("neutron_minecart",
+            () -> EntityType.Builder.<NeutronMinecart>of(NeutronMinecart::new, MobCategory.MISC)
+                    .sized(0.98F, 0.7F)
+                    .passengerAttachments(0.1875F)
+                    .clientTrackingRange(8)
+                    .build(AvaritiaExpand.rl("neutron_minecart").toString()));
+
 
 
     public static void register(IEventBus bus){
@@ -100,6 +107,7 @@ public class AEEntities {
         EntityRenderers.register(AEEntities.CRYSTAL_WIND_CHARGE.get(), CrystalWindChargeRender::new);
         EntityRenderers.register(AEEntities.NEUTRON_WIND_CHARGE.get(), NeutronWindChargeRender::new);
         EntityRenderers.register(AEEntities.BLAZE_VINDICATOR.get(), BlazeVindicatorRender::new);
+        EntityRenderers.register(AEEntities.NEUTRON_MINECART.get(), NeutronMinecartRender::new);
 
     }
 

@@ -1,5 +1,6 @@
 {
   "itemGroup.tab.avaritia_expand": "Avaritia:Expand",
+
   "item.avaritia_expand.neutron_sword": "Neutronium Sword",
   "item.avaritia_expand.neutron_axe": "Neutronium Axe",
   "item.avaritia_expand.neutron_pickaxe": "Neutronium Pickaxe",
@@ -28,10 +29,14 @@
   "item.avaritia_expand.wither_star": "Wither Star",
   "item.avaritia_expand.wither_totem": "Wither Totem",
   "item.avaritia_expand.blaze_totem": "Blaze Totem",
+  "item.avaritia_expand.neutron_minecart": "Neutronium Minecart",
+
   "block.avaritia_expand.infinity_tnt_block": "Infinity TNT",
   "block.avaritia_expand.jeb_wool": "Jeb_ Wool",
   "block.avaritia_expand.jeb_carpet": "Jeb_ Carpet",
   "block.avaritia_expand.neutron_decompose": "Neutronium Decomposer",
+  "block.avaritia_expand.crystal_rail": "Crystal Rail",
+
   "tooltip.avaritia.tool.range": "Range",
   "tooltip.avaritia.tool.neutron_mobile_overworld": "Overworld",
   "tooltip.avaritia.tool.neutron_mobile_nether": "Nether",
@@ -40,8 +45,9 @@
   "tooltip.avaritia_expand.infinity_tnt_block.desc": "§8§oJust a little...",
   "tooltip.avaritia_expand.wither_star.desc": "This will summon a powerful enemy",
   "tooltip.avaritia_expand.blaze_totem.desc": "Loot *2",
-  "entity.avaritia_expand.infinity_tnt_entity":"Infinity TNT",
+
   "title.avaritia_expand.config.title": "Avaritia:Expand",
+
   "config.avaritia_expand.category.blocks": "Blocks",
   "config.avaritia_expand.category.tools": "Tools",
   "config.avaritia_expand.infinity_tnt_max_explosion_time": "Infinity TNT Explosion Time",
@@ -50,10 +56,15 @@
   "config.avaritia_expand.infinity_tnt_max_explosion_time.tooltip": "Recommended setting is 2000-8000",
   "config.avaritia_expand.infinity_tnt_max_range.tooltip": "Hey,I don't recommend this value to be greater than 256",
   "config.avaritia_expand.neutron_sword_max_range.tooltip": "The maximum teleportation distance of the Neutronium Sword",
+
   "advancements.avaritia_expand.infinity_shears.desc": "Never gonna give you up",
   "advancements.avaritia_expand.infinity_shears.title": "You got tricked",
+
   "entity.avaritia_expand.extreme_wither": "Extreme Wither",
   "entity.avaritia_expand.extreme_wither_skull": "Extreme Wither Skull",
   "entity.avaritia_expand.blaze_vindicator": "Blaze Vindicator",
+  "entity.avaritia_expand.neutron_minecart": "Neutronium Minecart",
+  "entity.avaritia_expand.infinity_tnt_entity":"Infinity TNT",
+
   "jei.tooltip.avaritia_expand.blaze_axe": "Right-click Ominous Banner to summon the Blaze Vindicator"
 }

@@ -306,6 +306,18 @@ public class AERecipes extends RecipeProvider implements IConditionBuilder {
                 .define('D', ModItems.neutron_ingot.get())
                 .unlockedBy("has_item", has(ModItems.neutron_ingot.get())).save(consumer);
 
+        ModShapedRecipeBuilder.shaped(RecipeCategory.MISC, AEItems.neutron_minecart.get(),3)
+                .pattern("       ")
+                .pattern("       ")
+                .pattern("       ")
+                .pattern("DD   DD")
+                .pattern("DD   DD")
+                .pattern("DDDBDDD")
+                .pattern("DDDDDDD")
+                .define('B', ModBlocks.neutron)
+                .define('D', ModItems.neutron_ingot.get())
+                .unlockedBy("has_item", has(ModItems.neutron_ingot.get())).save(consumer);
+
 
         //Blaze PortableBurner
 
@@ -385,5 +397,17 @@ public class AERecipes extends RecipeProvider implements IConditionBuilder {
                 .requires(ModItems.eternal_singularity.get())
                 .group("singularity_stew_eternal")
                 .unlockedBy("has_item", has(ModItems.eternal_singularity.get())).save(consumer, AvaritiaExpand.rl("singularity_stew_eternal"));
+
+        // Crystal Rail
+        ModShapedRecipeBuilder.shaped(RecipeCategory.MISC, AEBlocks.crystal_rail.get(),64,3)
+                .pattern(" D   D ")
+                .pattern(" D   D ")
+                .pattern(" DD DD ")
+                .pattern(" D D D ")
+                .pattern(" DD DD ")
+                .pattern(" D   D ")
+                .pattern(" D   D ")
+                .define('D', ModItems.crystal_matrix_ingot.get())
+                .unlockedBy("has_item", has(ModItems.crystal_matrix_ingot.get())).save(consumer);
     }
 }

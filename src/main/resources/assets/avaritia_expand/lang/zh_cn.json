@@ -1,5 +1,6 @@
 {
   "itemGroup.tab.avaritia_expand": "无尽：拓展",
+
   "item.avaritia_expand.neutron_sword": "中子剑",
   "item.avaritia_expand.neutron_axe": "中子斧",
   "item.avaritia_expand.neutron_pickaxe": "中子镐",
@@ -28,10 +29,14 @@
   "item.avaritia_expand.wither_star": "凋零之星",
   "item.avaritia_expand.wither_totem": "凋零傀儡",
   "item.avaritia_expand.blaze_totem": "烈焰图腾",
+  "item.avaritia_expand.neutron_minecart": "中子矿车",
+
   "block.avaritia_expand.infinity_tnt_block": "无尽TNT",
   "block.avaritia_expand.jeb_wool": "开发者羊毛",
   "block.avaritia_expand.jeb_carpet": "开发者地毯",
   "block.avaritia_expand.neutron_decompose": "中子态素分解机",
+  "block.avaritia_expand.crystal_rail": "水晶轨道",
+
   "tooltip.avaritia.tool.range": "范围",
   "tooltip.avaritia.tool.neutron_mobile_overworld": "主世界",
   "tooltip.avaritia.tool.neutron_mobile_nether": "下界",
@@ -40,8 +45,9 @@
   "tooltip.avaritia_expand.infinity_tnt_block.desc": "§8§o只需一点点...",
   "tooltip.avaritia_expand.wither_star.desc": "这将召唤一个强力的敌人",
   "tooltip.avaritia_expand.blaze_totem.desc": "战利品*2",
-  "entity.avaritia_expand.infinity_tnt_entity":"无尽TNT",
+
   "title.avaritia_expand.config.title": "无尽贪婪：拓展",
+
   "config.avaritia_expand.category.blocks": "方块",
   "config.avaritia_expand.category.tools": "工具",
   "config.avaritia_expand.infinity_tnt_max_explosion_time": "无尽TNT爆炸时间",
@@ -50,10 +56,15 @@
   "config.avaritia_expand.infinity_tnt_max_explosion_time.tooltip": "推荐设置是2000-8000",
   "config.avaritia_expand.infinity_tnt_max_range.tooltip": "嘿,我不建议你设置超过256",
   "config.avaritia_expand.neutron_sword_max_range.tooltip": "中子剑的最大传送距离",
+
   "advancements.avaritia_expand.infinity_shears.desc": "Never gonna give you up",
   "advancements.avaritia_expand.infinity_shears.title": "你被整了",
+
   "entity.avaritia_expand.extreme_wither": "超限凋零",
   "entity.avaritia_expand.extreme_wither_skull": "超限凋零头颅",
   "entity.avaritia_expand.blaze_vindicator": "烈狱卫道士",
+  "entity.avaritia_expand.neutron_minecart": "中子矿车",
+  "entity.avaritia_expand.infinity_tnt_entity":"无尽TNT",
+
   "jei.tooltip.avaritia_expand.blaze_axe": "右键不详旗帜召唤烈狱卫道士"
 }

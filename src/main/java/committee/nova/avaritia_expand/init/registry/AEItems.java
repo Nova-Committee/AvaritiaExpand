@@ -1,11 +1,14 @@
 package committee.nova.avaritia_expand.init.registry;
 
 import committee.nova.avaritia_expand.AvaritiaExpand;
+import committee.nova.avaritia_expand.common.entity.NeutronMinecart;
 import committee.nova.avaritia_expand.common.item.armor.blaze.*;
 import committee.nova.avaritia_expand.common.item.armor.crystal.CrystalBootsItem;
 import committee.nova.avaritia_expand.common.item.armor.crystal.CrystalChestplateItem;
 import committee.nova.avaritia_expand.common.item.armor.crystal.CrystalHelmetItem;
 import committee.nova.avaritia_expand.common.item.armor.crystal.CrystalLeggingsItem;
+import committee.nova.avaritia_expand.common.item.food.SingularityStewItem;
+import committee.nova.avaritia_expand.common.item.misc.NeutronMinecartItem;
 import committee.nova.avaritia_expand.common.item.misc.WitherStarItem;
 import committee.nova.avaritia_expand.common.item.misc.WitherTotemItem;
 import committee.nova.avaritia_expand.common.item.tool.blaze.BlazeTotemItem;
@@ -20,6 +23,8 @@ import committee.nova.mods.avaritia.init.registry.ModDataComponents;
 import committee.nova.mods.avaritia.init.registry.ModRarities;
 import committee.nova.mods.avaritia.init.registry.ModToolTiers;
 import committee.nova.mods.avaritia.init.registry.modes.ToolMode;
+import net.minecraft.world.entity.vehicle.AbstractMinecart;
+import net.minecraft.world.entity.vehicle.Minecart;
 import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Rarity;
@@ -56,6 +61,8 @@ public class AEItems {
                     .fireResistant().rarity(ModRarities.EPIC).stacksTo(1).attributes(NeutronMaceItem.createAttributes())));
     public static DeferredItem<Item> neutron_wind_charge = ITEMS.register("neutron_wind_charge",
             ()-> new NeutronWindChargeItem(new Item.Properties().fireResistant().rarity(ModRarities.EPIC).stacksTo(1).durability(256)));
+    public static DeferredItem<Item> neutron_minecart = ITEMS.register("neutron_minecart",
+            ()-> new NeutronMinecartItem(new Item.Properties().fireResistant().rarity(ModRarities.EPIC).stacksTo(1)));
 
 
 
@@ -90,7 +97,7 @@ public class AEItems {
     public static DeferredItem<Item> star_dessert = ITEMS.register("star_dessert",
             ()-> new Item(new Item.Properties().fireResistant().rarity(ModRarities.EPIC).stacksTo(16).food(AEFoods.star_dessert)));
     public static DeferredItem<Item> singularity_stew = ITEMS.register("singularity_stew",
-            ()-> new Item(new Item.Properties().fireResistant().rarity(ModRarities.EPIC).stacksTo(16).food(AEFoods.singularity_stew)));
+            ()-> new SingularityStewItem(new Item.Properties().fireResistant().rarity(ModRarities.EPIC).stacksTo(16).food(AEFoods.singularity_stew)));
 
     public static DeferredItem<Item> blaze_portable_burner = ITEMS.register("blaze_portable_burner",
             ()-> new BlazePortableBurnerItem(new Item.Properties().fireResistant().rarity(ModRarities.UNCOMMON).stacksTo(1)));

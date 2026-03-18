@@ -1,0 +1,22 @@
+{
+  "type": "avaritia:shaped_table",
+  "key": {
+    "D": {
+      "item": "avaritia:crystal_matrix_ingot"
+    }
+  },
+  "pattern": [
+    " D   D ",
+    " D   D ",
+    " DD DD ",
+    " D D D ",
+    " DD DD ",
+    " D   D ",
+    " D   D "
+  ],
+  "result": {
+    "count": 64,
+    "id": "avaritia_expand:crystal_rail"
+  },
+  "tier": 3
+}

@@ -1,6 +1,7 @@
 package committee.nova.avaritia_expand.init.registry;
 
 import committee.nova.avaritia_expand.AvaritiaExpand;
+import committee.nova.avaritia_expand.common.block.CrystalRailBlock;
 import committee.nova.avaritia_expand.common.block.InfinityTntBlock;
 import committee.nova.avaritia_expand.common.block.JebCarpetBlock;
 import committee.nova.avaritia_expand.common.block.NeutronDecomposeBlock;
@@ -10,6 +11,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Rarity;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredBlock;
@@ -25,6 +27,7 @@ public class AEBlocks {
     public static DeferredBlock<Block> jeb_wool = itemBlock("jeb_wool", () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_WOOL)));
     public static DeferredBlock<Block> jeb_carpet = itemBlock("jeb_carpet", () -> new JebCarpetBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_CARPET)));
     public static DeferredBlock<Block> neutron_decompose = itemBlock("neutron_decompose", () -> new NeutronDecomposeBlock(BlockBehaviour.Properties.of().strength(50F,2000F)),ModRarities.RARE);
+    public static DeferredBlock<Block> crystal_rail = itemBlock("crystal_rail", () -> new CrystalRailBlock(BlockBehaviour.Properties.of().noCollission().strength(0.7F).sound(SoundType.METAL)),ModRarities.RARE);
 
     private static <T extends Block> DeferredBlock<T> itemBlock(String name, Supplier<T> block){
         DeferredBlock<T> toReturn = BLOCKS.register(name, block);
